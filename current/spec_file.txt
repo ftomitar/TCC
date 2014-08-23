@@ -1,0 +1,8 @@
+Domingo 10 de agosto 2014 - ver 1.5-1
+-Fix colisão de horario de aula dos professores entre semestres
+
+Sabado 09 de agosto 2014 - ver 1.4-2
+-Fix erros ao gerar mais de um semestre
+
+Sexta 01 de agosto 2014 - ver 1.4-1
+-Suporte para multiplos semestres adicionado
