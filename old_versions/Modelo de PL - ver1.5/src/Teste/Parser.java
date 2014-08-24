@@ -217,6 +217,7 @@ public class Parser {
                 posQuadro = iniciarContador(posQuadro.length);
                 
             }
+            /*
             while(aulaVazia(aula, posQuadro)){
                 
                 //String text = "<html><center>" + "----" + "<br>" + "----" + "</center>";
@@ -225,6 +226,7 @@ public class Parser {
                 
                 incrementarPosicao(posQuadro);
             }
+                    */
             
             String text = "<html><center>" + prof + "<br>" + mat + "</center>";
             lista.add(text);
