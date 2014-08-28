@@ -1,3 +1,6 @@
+Quinta 28 de agosto 2014 - ver 1.7-1
+-Adicionado compatibilidade entre as 2 versões do programa.
+
 Domingo 24 de agosto 2014 - ver 1.6-1
 -Adicionado integração do programa com o LP solver
 

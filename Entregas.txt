@@ -1,0 +1,56 @@
+Sprint 0:(2 weeks)
+	Start - 18/07/14
+	End   - 01/08/14
+	
+	Tasks:
+		- Modelar a aplicação:
+			-Criar DOM.
+			-Criar DCL.
+		- Refazer o programa usando OO:
+			-Criar estruturas para organização dos dados.
+			-Otimizar o modelo gerado reduzindo o espaço amostral utilizado.
+			
+		- Procurar outras alternativas para solucionar o modelo de PL.
+		
+		- Criar tela para mostrar o quadro de horarios gerado.
+		
+	Sprint results:
+		-To do:
+		
+		-Work in progress(WIP):
+		
+		-Done:
+			- Modelar a aplicação:
+				-Criar DOM.
+				-Criar DCL.
+			- Refazer o programa usando OO:
+				-Criar estruturas para organização dos dados.
+				-Otimizar o modelo gerado reduzindo o espaço amostral utilizado.
+				
+			- Procurar outras alternativas para solucionar o modelo de PL.
+			
+			- Criar tela para mostrar o quadro de horarios gerado.
+		
+		
+
+Sprint 1: (3 weeks)
+	Start - 04/08/14
+	End   - 27/08/14
+
+	Tasks:
+		- Adicionar suporte a multiplos semestres.
+		- Criar integração direta entre o programa em java e o LPSolver.
+		- Criar programa utilizando algoritmos genetico.
+		
+	Sprint results:
+		-To do:
+		
+		-Work in progress(WIP):
+			- Criar programa utilizando algoritmo genetico:
+				- Representação do problema no algoritmo genetico.
+				- Criação da função de avaliação dos genes.
+		-Done:
+			- Adicionar suporte a multiplos semestres.
+			- Criar integração direta entre o programa em java e o LPSolver.
+		
+

@@ -4,7 +4,7 @@ import java.util.Set;
 import LPSolveComunication.FileManager;
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template outputManager, choose Tools | Templates
  * and open the template in the editor.
  */
 
@@ -15,25 +15,25 @@ import LPSolveComunication.FileManager;
 public class Cronograma {
     Aula aula;
     String separador;
-    FileManager file;
-    public Cronograma(Aula aula,FileManager manager){
+    IModelOutput outputManager;
+    public Cronograma(Aula aula,IModelOutput outputManager){
         this.aula = aula;
-        file = manager;
+        this.outputManager = outputManager;
         separador = "&";
     }
     
     public void gerarModelo(){
-        file.abrirArquivoEscrita();
+        outputManager.beginOutput();
         
-        file.escreverLinha("MAX");
+        outputManager.println("MAX");
         gerarAulasPossiveis();
-        file.escreverLinha("ST");
+        outputManager.println("ST");
         gerarRestricao();
-        file.escreverLinha("END");
+        outputManager.println("END");
         setVariableType("integer");
         //setVariableType("boolean");
         
-        file.fecharArquivo();
+        outputManager.endOutput();
     }
     
     public String concat(String nomeSemestre, String nomeAula, String nomeProf, String nomeMat){
@@ -80,7 +80,7 @@ public class Cronograma {
             equacao = equacao.substring(0, equacao.length()-1); //apaga o ultimo '+'
         }
         
-        file.escreverLinha(equacao);
+        outputManager.println(equacao);
     }
     
     public void gerarRestricao(){
@@ -125,7 +125,7 @@ public class Cronograma {
                 if (eq != ""){
                     eq = eq.substring(0, eq.length()-1); //apaga o ultimo '+'
                     eq = eq + "<1";
-                    file.escreverLinha(eq);
+                    outputManager.println(eq);
                 }
             }
         }
@@ -166,7 +166,7 @@ public class Cronograma {
                         eq = eq.substring(0, eq.length()-1); //apaga o ultimo '+'
                         eq = eq + "=" + qtdAulas;
                         //eq = eq + "<" + qtdAulas; //Relaxamento de restrições, teste caso a solução seja inviavel
-                        file.escreverLinha(eq);
+                        outputManager.println(eq);
                     }
 
                 }
@@ -207,7 +207,7 @@ public class Cronograma {
                     if (eq != ""){
                         eq = eq.substring(0, eq.length()-1); //apaga o ultimo '+'
                         eq = eq + "<1";
-                        file.escreverLinha(eq);
+                        outputManager.println(eq);
                     }
                 }
             } 
@@ -244,15 +244,15 @@ public class Cronograma {
                             variavel = concat(nomeSem, nomeAula, nomeProf, nomeMat );
                             if(type == "integer"){
                                 variavel =  "GIN " + variavel ;
-                                file.escreverLinha(variavel);
+                                outputManager.println(variavel);
                             }
 
                             else if(type == "boolean"){
                                 variavel =  "INT " + variavel ;
-                                file.escreverLinha(variavel);
+                                outputManager.println(variavel);
                             }
                             else{
-                                file.escreverLinha("Tipo de variavel invalida");
+                                outputManager.println("Tipo de variavel invalida");
                             }
                         }
                     }

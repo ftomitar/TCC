@@ -275,30 +275,60 @@ public class Aplication {
     
     public static void main (String args[]){
         
+        String file = "E:\\Modelo de PL - ver1.6\\files\\model_LP.txt";
+        
+        String type = "";
+        
+        //type = "file";
+        type = "terminal";
+        
         Aplication apl = new Aplication();
       
         Aula aula = new Aula();
         
         apl.inicializarAulas(aula);
         
-        String file = "E:\\Modelo de PL - ver1.6\\files\\model_LP.txt";
         
-        FileManager fileManager = new FileManager(file);
         
-        Cronograma crono = new Cronograma(aula, fileManager);
+        if(type.equals("file")){
+            
+        
+            IModelOutput outputManager = new FileManager(file);
+
+            Cronograma crono = new Cronograma(aula, outputManager);
+
+            crono.gerarModelo();
+
+            LPSolveInterface lpsolve = new LPSolveInterface(file);
+
+            String solution = lpsolve.solveModel();
+
+            System.out.println(solution);
+
+            Parser parser = new Parser();
+
+            parser.gerarQuadro(solution);
+        
+        }
+        
+        else if (type.equals("terminal")){
+            IModelOutput outputManager = new TerminalOutput();
+            
+            Cronograma crono = new Cronograma(aula, outputManager);
+        
+            crono.gerarModelo();
+        }
+        /*
+        Aplication apl = new Aplication();
+      
+        Aula aula = new Aula();
+        
+        apl.inicializarAulas(aula);
+        
+        Cronograma crono = new Cronograma(aula);
         
         crono.gerarModelo();
-        
-        LPSolveInterface lpsolve = new LPSolveInterface(file);
-        
-        String solution = lpsolve.solveModel();
-        
-        System.out.println(solution);
-        
-        Parser parser = new Parser();
-        
-        parser.gerarQuadro(solution);
-        
+        */
         
     }
     

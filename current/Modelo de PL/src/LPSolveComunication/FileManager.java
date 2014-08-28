@@ -5,6 +5,7 @@
  */
 package LPSolveComunication;
 
+import Modelo.de.PL.IModelOutput;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +18,7 @@ import java.util.logging.Logger;
  * @OriginalAuthor felipe
  * @author xD alexandre
  */
-public class FileManager {
+public class FileManager implements IModelOutput{
 
     private String _nomeArquivo = "";
     private BufferedWriter _output = null;
@@ -63,5 +64,17 @@ public class FileManager {
                 System.out.println("Arquivo não foi encontrado - " + ex.getMessage());
             }
         }
+    }
+    
+    public void beginOutput(){
+        this.abrirArquivoEscrita();
+    }
+    
+    public void endOutput(){
+        this.fecharArquivo();
+    }
+    
+    public void println(String info){
+        this.escreverLinha(info);
     }
 }
