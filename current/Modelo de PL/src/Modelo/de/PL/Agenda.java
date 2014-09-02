@@ -26,7 +26,7 @@ public class Agenda {
     }
     
     public void removeHorarioLivre(Horario periodo){
-        horarioLivre.remove(periodo);
+        horarioLivre.remove(periodo);      
     }
     
     public boolean horarioLivre(Horario periodo){

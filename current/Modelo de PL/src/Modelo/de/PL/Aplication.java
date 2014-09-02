@@ -275,12 +275,12 @@ public class Aplication {
     
     public static void main (String args[]){
         
-        String file = "E:\\Modelo de PL - ver1.6\\files\\model_LP.txt";
+        String file = "files//model_LP.txt";
         
         String type = "";
         
-        //type = "file";
-        type = "terminal";
+        type = "file";
+        //type = "terminal";
         
         Aplication apl = new Aplication();
       

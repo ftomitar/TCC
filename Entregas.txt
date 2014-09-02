@@ -53,4 +53,26 @@ Sprint 1: (3 weeks)
 			- Adicionar suporte a multiplos semestres.
 			- Criar integração direta entre o programa em java e o LPSolver.
 		
-
+Sprint 2: (1 week)
+	Start - 28/08/14
+	End   - 03/09/14
+	
+	Tasks:
+		- Discutir oque sera apresentado para o professor Giorno.
+		
+		- Documentar os programas: 
+			- Algoritmo genetico.
+			- Programação linear.
+			
+		- Criar designs para tela de input de dados.
+		
+		- Definir contrato dos metodos.
+		
+		- Testes:
+			- Unitario:
+				- Criar casos de teste segundo o contrato.
+				
+			- Integração:
+				- Descrever cenarios de teste.
+				- Criar testes segundo os cenarios.
+			
