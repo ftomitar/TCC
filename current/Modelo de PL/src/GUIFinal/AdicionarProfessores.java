@@ -56,30 +56,26 @@ public class AdicionarProfessores extends javax.swing.JPanel {
         Collections.sort((List)_materiasLecionadas);
         listMateriasDisponiveis.setListData(_materiasDisponiveis);
         listMateriasLecionadas.setListData(_materiasLecionadas);
-        if(listMateriasDisponiveis.getSize().height > 0){
+        if(listMateriasDisponiveis.getLastVisibleIndex()!= -1){
              listMateriasDisponiveis.setSelectionInterval(0, 0);
         }
-        if(listMateriasLecionadas.getSize().height > 0){
+        if(listMateriasLecionadas.getLastVisibleIndex()!= -1){
              listMateriasLecionadas.setSelectionInterval(0, 0);
         }
     }
   
     
     private void trocarMaterias(JList lista, Vector <Materia> origem, Vector <Materia> destino){
-        int[] indexes = lista.getSelectedIndices();
-        List<Materia> auxiliar = new ArrayList<>();
+        lista.getLastVisibleIndex();
+        List<Materia> itens = lista.getSelectedValuesList();
         if(!origem.isEmpty()){
-            for(int i = 0; i < indexes.length; i++){
-                Materia m = origem.get(indexes[i]);
+            for(Materia m: itens){
+                origem.remove(m);
                 destino.add(m);
-                auxiliar.add(m);
-            }
-            for(Materia mat: auxiliar){
-                origem.remove(mat);
-            }
+            }   
             atualizarListas();
         }
-        
+
     }
 
     /**

@@ -10,6 +10,13 @@ import GUI.ActionListener.ComboOpcoesActionListener;
 import GUI.TelaQuadro;
 import Modelo.de.PL.Aplication;
 import Modelo.de.PL.Aula;
+import Modelo.de.PL.Materia;
+import Modelo.de.PL.Professor;
+import Modelo.de.PL.Semestre;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.ListModel;
@@ -59,7 +66,7 @@ public class Principal extends javax.swing.JFrame {
         _quadroInicial.pack();
         _quadroInicial.setVisible(false);
         
-        _telaProfessores =new JFrame ("MyPanel");
+        _telaProfessores =new JFrame ("Painel Professores");
          _telaProfessores.setDefaultCloseOperation (JFrame.HIDE_ON_CLOSE);
         _telaProfessores.getContentPane().add (addProf);
         _telaProfessores.pack();
@@ -82,7 +89,6 @@ public class Principal extends javax.swing.JFrame {
         switch (name) {
             case "Professores":
                 _state = "Professores";
-                
                 listaPrincipal.setListData(aula.getProfessores().toArray());
                 System.out.println("Professor");
                 break;
@@ -102,18 +108,57 @@ public class Principal extends javax.swing.JFrame {
     public void refresh() {
         switch (_state) {
             case "Professores":
-                _state = "Professores";
                 listaPrincipal.setListData(aula.getProfessores().toArray());
                 break;
             case "Materias":
-                 _state = "Materias";
                 listaPrincipal.setListData(aula.getMaterias().toArray()); 
                 break;
             case "Semestres":
-                _state = "Semestres";
                 listaPrincipal.setListData(aula.getSemestres().toArray());
                 break;
         }
+    }
+    
+    private void removeElementFrom(Set conjunto, Object ob ){
+       
+        if (ob instanceof Professor) {
+            Professor escolhido =  (Professor)ob;
+            System.out.println("escolhido: " + escolhido.getNome());
+            conjunto.remove(escolhido);
+        }
+        else if(ob instanceof Materia){
+            Materia escolhido =  (Materia)ob;
+            conjunto.remove(escolhido);
+            removerMateria(escolhido);
+        }
+        else if(ob instanceof Semestre){
+            Semestre escolhido =  (Semestre)ob;
+            conjunto.remove(escolhido);
+        }
+    }
+    
+    private void removerMateria(Materia mat){
+        Set<Professor> professores = aula.getProfessores();
+        Set<Semestre> semestres = aula.getSemestres();
+        
+        for(Professor p: professores){
+            p.removeMateria(mat);
+        }
+        for(Semestre s: semestres){
+            s.removeMateria(mat);
+        }
+    }
+    
+    private void removeElements(Set conjunto){
+        List elements = listaPrincipal.getSelectedValuesList();
+        
+        for (Object ob: elements){
+            removeElementFrom(conjunto, ob);
+        }
+        
+        refresh();
+        System.out.println("conjunto: " + conjunto);
+        System.out.println("conjunto tamanho: " + conjunto.size());
     }
     
     
@@ -153,6 +198,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         botaoRemover.setText("Remover");
+        botaoRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoRemoverActionPerformed(evt);
+            }
+        });
 
         botaoEditar.setText("Editar");
 
@@ -161,6 +211,11 @@ public class Principal extends javax.swing.JFrame {
 
         comboOpcoes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         comboOpcoes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Professores", "Materias", "Semestres" }));
+        comboOpcoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboOpcoesActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(listaPrincipal);
 
@@ -235,6 +290,26 @@ public class Principal extends javax.swing.JFrame {
                 break;
         }
     }//GEN-LAST:event_botaoAdicionarActionPerformed
+
+    private void botaoRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRemoverActionPerformed
+        //TODO: funcao de remoção
+        switch (_state) {
+            case "Professores":
+                removeElements(aula.getProfessores());
+                break;
+            case "Materias":
+                removeElements(aula.getMaterias());
+                System.out.println("Materia");
+                break;
+            case "Semestres":
+                removeElements(aula.getSemestres());
+                break;
+        }
+    }//GEN-LAST:event_botaoRemoverActionPerformed
+
+    private void comboOpcoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOpcoesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboOpcoesActionPerformed
 
     /**
      * @param args the command line arguments
