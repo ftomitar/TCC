@@ -74,4 +74,8 @@ public class Professor {
         
         return resp;
     }
+    
+    public String toString(){
+        return nome;
+    }
 }

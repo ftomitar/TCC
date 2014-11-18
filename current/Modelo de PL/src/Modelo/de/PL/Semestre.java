@@ -39,4 +39,8 @@ public class Semestre {
         return nome;
     }
     
+    public String toString(){
+        return nome;
+    }
+    
 }

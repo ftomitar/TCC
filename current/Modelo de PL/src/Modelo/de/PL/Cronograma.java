@@ -1,5 +1,6 @@
 package Modelo.de.PL;
 
+import Conjuntos.IModelo;
 import java.util.Set;
 import LPSolveComunication.FileManager;
 /*
@@ -12,7 +13,7 @@ import LPSolveComunication.FileManager;
  *
  * @author aaratame
  */
-public class Cronograma {
+public class Cronograma implements IModelo{
     Aula aula;
     String separador;
     IModelOutput outputManager;
@@ -36,7 +37,7 @@ public class Cronograma {
         outputManager.endOutput();
     }
     
-    public String concat(String nomeSemestre, String nomeAula, String nomeProf, String nomeMat){
+    private String concat(String nomeSemestre, String nomeAula, String nomeProf, String nomeMat){
         String resp = "";
         
         resp = nomeSemestre + separador + nomeAula + separador + nomeProf + separador + nomeMat;
@@ -44,7 +45,7 @@ public class Cronograma {
         return resp;
     }
     
-    public void gerarAulasPossiveis(){
+    private void gerarAulasPossiveis(){
         Set <Professor> professor = aula.getProfessores();
         Set <Materia> materia;
         Set <Horario> horario;
@@ -83,13 +84,13 @@ public class Cronograma {
         outputManager.println(equacao);
     }
     
-    public void gerarRestricao(){
+    private void gerarRestricao(){
         tempoAula();
         aulasSemana();
         professor2AulasSimultaneas();
     }
     
-    public void tempoAula(){
+    private void tempoAula(){
         Set <Professor> professores = aula.getProfessores();
         Set <Horario> horarios = aula.getHorarios();
         Set <Materia> materias;
@@ -132,7 +133,7 @@ public class Cronograma {
         
     }
     
-    public void aulasSemana(){
+    private void aulasSemana(){
         Set <Materia> materias = aula.getMaterias();
         Set <Professor> professores = aula.getProfessores();
         Set <Horario> horarios ;
@@ -164,8 +165,8 @@ public class Cronograma {
                     }
                     if (eq != ""){
                         eq = eq.substring(0, eq.length()-1); //apaga o ultimo '+'
-                        eq = eq + "=" + qtdAulas;
-                        //eq = eq + "<" + qtdAulas; //Relaxamento de restrições, teste caso a solução seja inviavel
+                        //eq = eq + "=" + qtdAulas;
+                        eq = eq + "<" + qtdAulas; //Relaxamento de restrições, teste caso a solução seja inviavel
                         outputManager.println(eq);
                     }
 
@@ -174,7 +175,7 @@ public class Cronograma {
         }
     }
     
-    public void professor2AulasSimultaneas(){
+    private void professor2AulasSimultaneas(){
         Set <Professor> professores = aula.getProfessores();
         Set <Horario> horarios = aula.getHorarios();
         Set <Materia> materias;
@@ -217,7 +218,7 @@ public class Cronograma {
         
     }
     
-    public void setVariableType(String type){
+    private void setVariableType(String type){
         Set <Professor> professor = aula.getProfessores();
         Set <Materia> materia;
         Set <Horario> horario;

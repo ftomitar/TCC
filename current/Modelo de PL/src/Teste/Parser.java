@@ -63,7 +63,7 @@ public class Parser {
         */
     }
     
-    public ArrayList<String> parsearDados(String dados){
+    private ArrayList<String> parsearDados(String dados){
         ArrayList<String> aulas = new ArrayList<String>();
         Pattern pattern = Pattern.compile("(\\w+&\\w+&[a-zA-Z&]+);1");
         Matcher matcher = pattern.matcher(dados);
@@ -77,7 +77,7 @@ public class Parser {
         return aulas;
     }
     
-    public boolean aulaVazia(String aula, char[] pos){
+    private boolean aulaVazia(String aula, char[] pos){
         boolean status = false;
         
         char [] aulaPos = aula.toCharArray();
@@ -93,7 +93,7 @@ public class Parser {
         return status;
     }
     
-    public void incrementarPosicao(char[] pos){
+    private void incrementarPosicao(char[] pos){
         // Suporta até 676 posições 26*26 (verifico apenas a ultima letra e aumento a penultima.
         
         int size = pos.length;
@@ -117,7 +117,7 @@ public class Parser {
         //return pos;
     }
     
-    public void gerarPainel(JTabbedPane tabPanel, List<String> aulas){
+    private void gerarPainel(JTabbedPane tabPanel, List<String> aulas){
         
         JPanel panel = new JPanel(new GridLayout(row,colum));
         List<JLabel> labels = new ArrayList<JLabel>();
@@ -144,7 +144,7 @@ public class Parser {
         
     }
     
-    public void completarPainel(List<JLabel> labels, List<String> lista){
+    private void completarPainel(List<JLabel> labels, List<String> lista){
         JLabel jl = null;
         int col = 0;
         int linha = 0;
@@ -161,7 +161,7 @@ public class Parser {
         }
     }
     
-    public void gerarQuadro(JTabbedPane tabPanel, ArrayList<String> aulas){
+    private void gerarQuadro(JTabbedPane tabPanel, ArrayList<String> aulas){
         AulaQuadro quadro;
         boolean vazio = aulas.isEmpty();
         List<String> lista = new ArrayList<String>();
@@ -247,14 +247,14 @@ public class Parser {
         
     }
     
-    public boolean semestreDiferente(String semestre, char[] posQuadro){
+    private boolean semestreDiferente(String semestre, char[] posQuadro){
         boolean status;
         status = aulaVazia(semestre, posQuadro);
         return status;
     }
     
     
-    public char[] iniciarContador( int size){
+    private char[] iniciarContador( int size){
         char []contador = new char[size];
         for(int i = 0; i < size; i++){
             contador[i] = 'A';

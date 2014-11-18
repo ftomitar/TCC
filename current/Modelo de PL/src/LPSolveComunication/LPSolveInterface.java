@@ -15,7 +15,7 @@ import lpsolve.*;
  * @author alexandre
  */
 public class LPSolveInterface {
-    String file;  
+    String file;
     public LPSolveInterface(String file){
         this.file = file;
     }

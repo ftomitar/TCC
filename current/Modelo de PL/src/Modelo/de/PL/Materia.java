@@ -10,7 +10,7 @@ package Modelo.de.PL;
  *
  * @author aaratame
  */
-public class Materia {
+public class Materia implements Comparable{
     
     private String nome;
     private int quantidade;
@@ -38,6 +38,18 @@ public class Materia {
         status = semestre.materiaLecionada(this);
         
         return status;
+    }
+    public String toString(){
+        
+        return nome;
+    }
+
+    
+    public int compareTo(Object outraMateria) {
+         if (!(outraMateria instanceof Materia))
+            throw new ClassCastException("A Materia object expected.");
+        String outraMateriaNome = ((Materia) outraMateria).getNome();
+        return nome.compareTo(outraMateriaNome);
     }
 
    
