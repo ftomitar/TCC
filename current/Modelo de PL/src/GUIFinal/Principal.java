@@ -8,6 +8,10 @@ package GUIFinal;
 
 import GUI.ActionListener.ComboOpcoesActionListener;
 import GUI.TelaQuadro;
+import GUIFinal.ListController.IListController;
+import GUIFinal.ListController.MateriasListController;
+import GUIFinal.ListController.ProfessoresListController;
+import GUIFinal.ListController.SemestresListController;
 import Modelo.de.PL.Aplication;
 import Modelo.de.PL.Aula;
 import Modelo.de.PL.Materia;
@@ -33,8 +37,14 @@ public class Principal extends javax.swing.JFrame {
     Aula aula;
     private String _state = "Professores";
     
+    
+    private IListController _listController;
+    private IListController _professoresListController;
+    private IListController _materiasListController;
+    private IListController _semestresListController;
+            
     private JFrame _quadroInicial;
-    private JFrame _telaProfessores;
+    private JFrame _telaAdicionarProfessores;
     /**
      * Creates new form Principal
      */
@@ -43,12 +53,14 @@ public class Principal extends javax.swing.JFrame {
         mockGeracaoAulas();
         
         gerarTelasAdicionais();
+        gerarControladores();
         initComponents();
         inicializarListeners();
-        telaQuadro.setVisible(true);
-        
-        
+        //telaQuadro.setVisible(true);
+            
     }
+    
+    
     private void mockGeracaoAulas(){
         Aplication apl = new Aplication();
         apl.inicializarAulas(aula);
@@ -56,7 +68,7 @@ public class Principal extends javax.swing.JFrame {
     
     private void gerarTelasAdicionais(){
         telaQuadro = new GerarQuadro(this);
-        addProf = new AdicionarProfessores(aula, this);
+        
   
         
         
@@ -66,11 +78,16 @@ public class Principal extends javax.swing.JFrame {
         _quadroInicial.pack();
         _quadroInicial.setVisible(false);
         
-        _telaProfessores =new JFrame ("Painel Professores");
-         _telaProfessores.setDefaultCloseOperation (JFrame.HIDE_ON_CLOSE);
-        _telaProfessores.getContentPane().add (addProf);
-        _telaProfessores.pack();
-        _telaProfessores.setVisible(false);
+       
+    }
+    
+    private void gerarControladores(){
+        _professoresListController = new ProfessoresListController(this, listaPrincipal, aula);
+        _materiasListController = new MateriasListController(this, listaPrincipal, aula);
+        _semestresListController = new SemestresListController(this, listaPrincipal, aula);
+        
+        
+        _listController = _professoresListController;
     }
     
     private void inicializarListeners(){
@@ -89,20 +106,21 @@ public class Principal extends javax.swing.JFrame {
         switch (name) {
             case "Professores":
                 _state = "Professores";
-                listaPrincipal.setListData(aula.getProfessores().toArray());
+                _listController = _professoresListController;
                 System.out.println("Professor");
                 break;
             case "Materias":
                  _state = "Materias";
-                listaPrincipal.setListData(aula.getMaterias().toArray());
+                _listController = _materiasListController;
                 System.out.println("Materia");
                 break;
             case "Semestres":
                 _state = "Semestres";
-                listaPrincipal.setListData(aula.getSemestres().toArray());
+                _listController = _semestresListController;
                 System.out.println("Semestre");
                 break;
         }
+        refresh();
     }
      
     public void refresh() {
@@ -111,7 +129,7 @@ public class Principal extends javax.swing.JFrame {
                 listaPrincipal.setListData(aula.getProfessores().toArray());
                 break;
             case "Materias":
-                listaPrincipal.setListData(aula.getMaterias().toArray()); 
+                listaPrincipal.setListData(aula.getMaterias().toArray());
                 break;
             case "Semestres":
                 listaPrincipal.setListData(aula.getSemestres().toArray());
@@ -149,7 +167,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }
     
-    private void removeElements(Set conjunto){
+    public void removeElements(Set conjunto){
         List elements = listaPrincipal.getSelectedValuesList();
         
         for (Object ob: elements){
@@ -205,6 +223,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         botaoEditar.setText("Editar");
+        botaoEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEditarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Opções");
@@ -278,38 +301,21 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoNovoQuadroActionPerformed
 
     private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
-        switch (_state) {
-            case "Professores":
-                _telaProfessores.setVisible(true);
-                break;
-            case "Materias":
-                System.out.println("Materia");
-                break;
-            case "Semestres":
-                System.out.println("Semestre");
-                break;
-        }
+        _listController.adicionar();
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
     private void botaoRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRemoverActionPerformed
-        //TODO: funcao de remoção
-        switch (_state) {
-            case "Professores":
-                removeElements(aula.getProfessores());
-                break;
-            case "Materias":
-                removeElements(aula.getMaterias());
-                System.out.println("Materia");
-                break;
-            case "Semestres":
-                removeElements(aula.getSemestres());
-                break;
-        }
+        _listController.remover();
     }//GEN-LAST:event_botaoRemoverActionPerformed
 
     private void comboOpcoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOpcoesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboOpcoesActionPerformed
+
+    private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
+        Object ob = listaPrincipal.getSelectedValue();
+        _listController.editar(ob);
+    }//GEN-LAST:event_botaoEditarActionPerformed
 
     /**
      * @param args the command line arguments

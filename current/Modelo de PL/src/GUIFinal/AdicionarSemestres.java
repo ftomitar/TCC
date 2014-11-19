@@ -9,6 +9,7 @@ package GUIFinal;
 import Modelo.de.PL.Aula;
 import Modelo.de.PL.Materia;
 import Modelo.de.PL.Professor;
+import Modelo.de.PL.Semestre;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +22,7 @@ import javax.swing.ListModel;
  *
  * @author Alexandre
  */
-public class AdicionarProfessores extends javax.swing.JPanel {
+public class AdicionarSemestres extends javax.swing.JPanel {
     Aula _aula;
     List _listTodasMaterias;
     Vector <Materia>_materiasDisponiveis;
@@ -32,7 +33,7 @@ public class AdicionarProfessores extends javax.swing.JPanel {
      * @param aula
      * @param tela
      */
-    public AdicionarProfessores(Aula aula, Principal tela) {
+    public AdicionarSemestres(Aula aula, Principal tela) {
         initComponents();
         _aula = aula;
         _listTodasMaterias = new ArrayList(_aula.getMaterias());
@@ -78,21 +79,32 @@ public class AdicionarProfessores extends javax.swing.JPanel {
 
     }
     
-    private void criarProfessor(){
-        String nome = textFieldNome.getText();
-        System.out.println("nome: " + nome);
-        String nomeSemEspaco = nome.replaceAll("\\s+","");
-        Professor prof = new Professor(nomeSemEspaco);
-        carregarMaterias(prof);
-        Set professores = _aula.getProfessores();
-        professores.add(prof);
+    private void criarSemestre(){
+        Set semestres = _aula.getSemestres();
+        
+        int size = semestres.size();
+        
+
+        Semestre sem = new Semestre(calcularNomeSemestre(size));
+        carregarMaterias(sem);
+        
+        semestres.add(sem);
         
     }
     
-    private void carregarMaterias(Professor prof){
+    private void carregarMaterias(Semestre sem){
         for( Materia m: _materiasLecionadas){
-            prof.addMateria(m);
+            sem.addMateria(m);
         }
+    }
+    
+    private String calcularNomeSemestre(int posicao){
+        int posicaoRelativa = posicao % 26;
+        char nome = 'A';
+        nome += posicaoRelativa;
+        
+        
+        return nome + "";
     }
 
     /**
@@ -104,11 +116,8 @@ public class AdicionarProfessores extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelNome = new javax.swing.JLabel();
-        textFieldNome = new javax.swing.JTextField();
         botaoAdicionar = new javax.swing.JButton();
         botaoResetMaterias = new javax.swing.JButton();
-        botaoEditHorarios = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listMateriasDisponiveis = new javax.swing.JList();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -117,12 +126,7 @@ public class AdicionarProfessores extends javax.swing.JPanel {
         botaoAdicionarMateria = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-
-        labelNome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        labelNome.setText("Nome: ");
-
-        textFieldNome.setColumns(10);
-        textFieldNome.setText("Nome Professor");
+        jLabel1 = new javax.swing.JLabel();
 
         botaoAdicionar.setText("Adicionar");
         botaoAdicionar.addActionListener(new java.awt.event.ActionListener() {
@@ -137,8 +141,6 @@ public class AdicionarProfessores extends javax.swing.JPanel {
                 botaoResetMateriasActionPerformed(evt);
             }
         });
-
-        botaoEditHorarios.setText("Editar Horario Livre");
 
         jScrollPane1.setViewportView(listMateriasDisponiveis);
 
@@ -162,6 +164,9 @@ public class AdicionarProfessores extends javax.swing.JPanel {
 
         jLabel3.setText("Materias Lecionadas");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Semestre");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -170,10 +175,8 @@ public class AdicionarProfessores extends javax.swing.JPanel {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -192,26 +195,23 @@ public class AdicionarProfessores extends javax.swing.JPanel {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(botaoEditHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoResetMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoResetMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                                     .addComponent(botaoAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(45, 45, 45))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNome)
-                    .addComponent(textFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(130, 130, 130)
                         .addComponent(botaoRemoverMateria)
                         .addGap(27, 27, 27)
                         .addComponent(botaoAdicionarMateria))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel1)
+                        .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
@@ -220,18 +220,16 @@ public class AdicionarProfessores extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(botaoAdicionar)
                                 .addGap(31, 31, 31)
-                                .addComponent(botaoResetMaterias)
-                                .addGap(33, 33, 33)
-                                .addComponent(botaoEditHorarios))
+                                .addComponent(botaoResetMaterias))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                             .addComponent(jScrollPane2))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
         
-        criarProfessor();
+        criarSemestre();
         _tela.refresh();
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
@@ -252,16 +250,14 @@ public class AdicionarProfessores extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAdicionar;
     private javax.swing.JButton botaoAdicionarMateria;
-    private javax.swing.JButton botaoEditHorarios;
     private javax.swing.JButton botaoRemoverMateria;
     private javax.swing.JButton botaoResetMaterias;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel labelNome;
     private javax.swing.JList listMateriasDisponiveis;
     private javax.swing.JList listMateriasLecionadas;
-    private javax.swing.JTextField textFieldNome;
     // End of variables declaration//GEN-END:variables
 }

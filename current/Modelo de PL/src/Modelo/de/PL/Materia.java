@@ -21,6 +21,11 @@ public class Materia implements Comparable{
         this.semestre = semestre;
     }
     
+    public Materia(String nome, int quantidade){
+        this.nome = nome;
+        this.quantidade = quantidade;
+    }
+    
     public String getNome(){
         return nome;
     }
@@ -28,11 +33,11 @@ public class Materia implements Comparable{
     public int numeroAulas(){
         return quantidade;
     }
-    
+    /*
     public String getSemestre(){
         return semestre;
     }
-    
+    */
     public boolean lecionada(Semestre semestre){
         boolean status;
         status = semestre.materiaLecionada(this);
