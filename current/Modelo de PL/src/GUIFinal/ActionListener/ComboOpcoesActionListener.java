@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package GUI.ActionListener;
+package GUIFinal.ActionListener;
 
 import GUIFinal.Principal;
 import java.awt.event.ActionEvent;

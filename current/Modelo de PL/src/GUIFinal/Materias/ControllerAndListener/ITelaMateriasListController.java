@@ -6,6 +6,7 @@
 
 package GUIFinal.Materias.ControllerAndListener;
 
+import Modelo.de.PL.Materia;
 import java.util.Vector;
 import javax.swing.JList;
 
@@ -17,7 +18,7 @@ public interface ITelaMateriasListController {
     
     public void criarElemento(String nome, int quantidade);
     
-    public void recriarElemento(Object ob);
+    public Materia recriarMateria(Materia mat);
     
     public void atualizarListas();
     

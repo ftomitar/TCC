@@ -12,6 +12,7 @@ import Modelo.de.PL.Professor;
 import Modelo.de.PL.Semestre;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.Vector;
 import javax.swing.JList;
 
@@ -61,8 +62,16 @@ public class MateriaSemestreListController implements ITelaMateriasListControlle
     }
     
     @Override
-    public void recriarElemento(Object ob) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Materia recriarMateria(Materia mat) {
+        String nome = mat.getNome();
+        int quantidade = mat.numeroAulas();
+        Materia novaMat = new Materia(nome, quantidade);
+        carregarDados(novaMat);
+        Set<Materia> materias =_aula.getMaterias();
+        materias.remove(mat);
+        materias.add(novaMat);
+        
+        return novaMat;
     }
    
     @Override

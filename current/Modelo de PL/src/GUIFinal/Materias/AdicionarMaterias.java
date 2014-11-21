@@ -6,7 +6,7 @@
 
 package GUIFinal.Materias;
 
-import GUI.ActionListener.ComboOpcoesActionListener;
+import GUIFinal.ActionListener.ComboOpcoesActionListener;
 import GUIFinal.Materias.ControllerAndListener.ComboOptionActionListener;
 import GUIFinal.Materias.ControllerAndListener.ITelaMateria;
 import GUIFinal.Materias.ControllerAndListener.ITelaMateriasListController;

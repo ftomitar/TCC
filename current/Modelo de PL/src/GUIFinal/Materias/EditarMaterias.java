@@ -6,7 +6,7 @@
 
 package GUIFinal.Materias;
 
-import GUI.ActionListener.ComboOpcoesActionListener;
+import GUIFinal.ActionListener.ComboOpcoesActionListener;
 import GUIFinal.Materias.ControllerAndListener.ComboOptionActionListener;
 import GUIFinal.Materias.ControllerAndListener.ITelaMateria;
 import GUIFinal.Materias.ControllerAndListener.ITelaMateriasListController;
@@ -331,13 +331,9 @@ public class EditarMaterias extends javax.swing.JPanel implements ITelaMateria{
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
-        listController.recriarElemento(_materia);
         
-        String nome = textFieldNome.getText();
-        System.out.println("nome: " + nome);
-        String nomeSemEspaco = nome.replaceAll("\\s+","");
-        int quantidade = Integer.parseInt(textFieldQuantidade.getText());
-        listController.criarElemento(nomeSemEspaco, quantidade);
+        _materia = listController.recriarMateria(_materia);
+        
         _tela.refresh();
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
