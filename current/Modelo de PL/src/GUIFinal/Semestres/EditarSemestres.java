@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 
-package GUIFinal;
+package GUIFinal.Semestres;
 
+import GUIFinal.Principal;
 import Modelo.de.PL.Aula;
 import Modelo.de.PL.Materia;
 import Modelo.de.PL.Professor;
 import Modelo.de.PL.Semestre;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
@@ -22,18 +24,20 @@ import javax.swing.ListModel;
  *
  * @author Alexandre
  */
-public class AdicionarSemestres extends javax.swing.JPanel {
+public class EditarSemestres extends javax.swing.JPanel {
     Aula _aula;
     List _listTodasMaterias;
     Vector <Materia>_materiasDisponiveis;
     Vector <Materia>_materiasLecionadas;
+    Semestre _semestre;
+    
     private final Principal _tela;
     /**
      * Creates new form AdicionarProfessores
      * @param aula
      * @param tela
      */
-    public AdicionarSemestres(Aula aula, Principal tela) {
+    public EditarSemestres(Aula aula, Principal tela) {
         initComponents();
         _aula = aula;
         _listTodasMaterias = new ArrayList(_aula.getMaterias());
@@ -67,28 +71,31 @@ public class AdicionarSemestres extends javax.swing.JPanel {
   
     
     private void trocarMaterias(JList lista, Vector <Materia> origem, Vector <Materia> destino){
-        lista.getLastVisibleIndex();
-        List<Materia> itens = lista.getSelectedValuesList();
-        if(!origem.isEmpty()){
+        if(existeMateriasSelecionadas(lista)){
+            List<Materia> itens = lista.getSelectedValuesList();
             for(Materia m: itens){
                 origem.remove(m);
                 destino.add(m);
             }   
             atualizarListas();
         }
-
     }
     
-    private void criarSemestre(){
+    private boolean existeMateriasSelecionadas(JList lista){
+        return lista.getLastVisibleIndex() != -1;
+    }
+    
+    
+    private void reCriarSemestre(){
         Set semestres = _aula.getSemestres();
-        
-        int size = semestres.size();
-        
-
-        Semestre sem = new Semestre(calcularNomeSemestre(size));
-        carregarMaterias(sem);
-        
-        semestres.add(sem);
+        semestres.remove(_semestre);
+        String nome = labelNome.getText();
+        System.out.println("nome: " + nome);
+        String nomeSemEspaco = nome.replaceAll("\\s+","");
+        Semestre semestre = new Semestre(nomeSemEspaco);
+        carregarMaterias(semestre);
+        semestres.add(semestre);
+        _semestre = semestre;
         
     }
     
@@ -98,13 +105,24 @@ public class AdicionarSemestres extends javax.swing.JPanel {
         }
     }
     
-    private String calcularNomeSemestre(int posicao){
-        int posicaoRelativa = posicao % 26;
-        char nome = 'A';
-        nome += posicaoRelativa;
+    
+    public void semestreEscolhido(Semestre semestre) {
+        _semestre = semestre;
+    }
+    
+    public void organizarGUI(){
+        Set matTodas = new HashSet(_aula.getMaterias());
+        Set matSemestre = _semestre.getMateriasLecionadas();
+        System.out.println("Materias Semestre: " + matSemestre);
+        labelNome.setText(_semestre.getNome());
+        _materiasLecionadas = new Vector(matSemestre);
+        System.out.println("Materias lecionadas: " + _materiasLecionadas);
+        matTodas.removeAll(matSemestre);
+        System.out.println("Materias disponiveis: " + matTodas);
+        _materiasDisponiveis = new Vector(matTodas);
         
+        atualizarListas();
         
-        return nome + "";
     }
 
     /**
@@ -116,7 +134,7 @@ public class AdicionarSemestres extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botaoAdicionar = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
         botaoResetMaterias = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listMateriasDisponiveis = new javax.swing.JList();
@@ -127,11 +145,12 @@ public class AdicionarSemestres extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        labelNome = new javax.swing.JLabel();
 
-        botaoAdicionar.setText("Adicionar");
-        botaoAdicionar.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.setText("Salvar");
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAdicionarActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
 
@@ -167,6 +186,9 @@ public class AdicionarSemestres extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Semestre");
 
+        labelNome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelNome.setText("A");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,6 +198,8 @@ public class AdicionarSemestres extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelNome)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,7 +220,7 @@ public class AdicionarSemestres extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(botaoResetMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                                    .addComponent(botaoAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(botaoSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(45, 45, 45))))))
         );
         layout.setVerticalGroup(
@@ -210,7 +234,9 @@ public class AdicionarSemestres extends javax.swing.JPanel {
                         .addComponent(botaoAdicionarMateria))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(labelNome))
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -218,7 +244,7 @@ public class AdicionarSemestres extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaoAdicionar)
+                                .addComponent(botaoSalvar)
                                 .addGap(31, 31, 31)
                                 .addComponent(botaoResetMaterias))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
@@ -227,11 +253,11 @@ public class AdicionarSemestres extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         
-        criarSemestre();
+        reCriarSemestre();
         _tela.refresh();
-    }//GEN-LAST:event_botaoAdicionarActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     private void botaoAdicionarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarMateriaActionPerformed
         trocarMaterias(listMateriasDisponiveis,_materiasDisponiveis,_materiasLecionadas);
@@ -248,15 +274,16 @@ public class AdicionarSemestres extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoAdicionar;
     private javax.swing.JButton botaoAdicionarMateria;
     private javax.swing.JButton botaoRemoverMateria;
     private javax.swing.JButton botaoResetMaterias;
+    private javax.swing.JButton botaoSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel labelNome;
     private javax.swing.JList listMateriasDisponiveis;
     private javax.swing.JList listMateriasLecionadas;
     // End of variables declaration//GEN-END:variables

@@ -6,6 +6,7 @@
 
 package GUIFinal;
 
+import GUIFinal.Professores.AdicionarProfessores;
 import GUI.ActionListener.ComboOpcoesActionListener;
 import GUI.TelaQuadro;
 import GUIFinal.ListController.IListController;

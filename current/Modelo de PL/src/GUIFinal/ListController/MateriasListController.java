@@ -6,9 +6,14 @@
 
 package GUIFinal.ListController;
 
+import GUIFinal.Materias.AdicionarMaterias;
+import GUIFinal.Materias.EditarMaterias;
 import GUIFinal.Principal;
 import Modelo.de.PL.Aula;
+import Modelo.de.PL.Materia;
+import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JPanel;
 
 /**
  *
@@ -19,22 +24,48 @@ public class MateriasListController implements IListController{
     private Principal _tela;
     private JList _listaPrincipal;
     private Aula _aula;
+    private JFrame _telaAdicionarMaterias;
+    private JFrame _telaEditarMaterias;
+    
+    private EditarMaterias _painelEditar;
 
     public MateriasListController(Principal tela, JList listaPrincipal, Aula aula){
         _tela = tela;
         _listaPrincipal = listaPrincipal;
         _aula = aula;
+        
+        _telaAdicionarMaterias = criarTela(new AdicionarMaterias(aula, tela));
+        _painelEditar = new EditarMaterias(aula, tela);
+        _telaEditarMaterias = criarTela(_painelEditar);
+        
+    }
+    
+     public JFrame criarTela(JPanel painel){
+        
+        JFrame tela = new JFrame ("Painel Matérias");
+        tela.setDefaultCloseOperation (JFrame.HIDE_ON_CLOSE);
+        tela.getContentPane().add (painel);
+        tela.pack();
+        tela.setVisible(false);
+        return tela;
     }
 
     
     @Override
     public void adicionar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        _telaAdicionarMaterias.setVisible(true);
     }
 
     @Override
     public void editar(Object escolhido) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(escolhido != null){
+            _painelEditar.materiaEscolhida((Materia)escolhido);
+            _painelEditar.organizarGUI();
+            _telaEditarMaterias.setVisible(true);
+        }
+        else{
+            System.out.println("seleção vazia");
+        }
     }
 
     @Override

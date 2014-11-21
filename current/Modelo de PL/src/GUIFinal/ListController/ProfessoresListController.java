@@ -6,8 +6,8 @@
 
 package GUIFinal.ListController;
 
-import GUIFinal.AdicionarProfessores;
-import GUIFinal.EditarProfessores;
+import GUIFinal.Professores.AdicionarProfessores;
+import GUIFinal.Professores.EditarProfessores;
 import GUIFinal.Principal;
 import Modelo.de.PL.Aula;
 import Modelo.de.PL.Professor;

@@ -50,6 +50,7 @@ public class Materia implements Comparable{
     }
 
     
+    @Override
     public int compareTo(Object outraMateria) {
          if (!(outraMateria instanceof Materia))
             throw new ClassCastException("A Materia object expected.");

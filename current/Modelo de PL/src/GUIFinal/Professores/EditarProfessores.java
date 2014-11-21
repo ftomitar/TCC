@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 
-package GUIFinal;
+package GUIFinal.Professores;
 
+import GUIFinal.Principal;
 import Modelo.de.PL.Aula;
 import Modelo.de.PL.Materia;
 import Modelo.de.PL.Professor;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
@@ -21,18 +23,20 @@ import javax.swing.ListModel;
  *
  * @author Alexandre
  */
-public class AdicionarProfessores extends javax.swing.JPanel {
-    Aula _aula;
-    List _listTodasMaterias;
-    Vector <Materia>_materiasDisponiveis;
-    Vector <Materia>_materiasLecionadas;
+public class EditarProfessores extends javax.swing.JPanel {
+    private Aula _aula;
+    private List _listTodasMaterias;
+    private Vector <Materia>_materiasDisponiveis;
+    private Vector <Materia>_materiasLecionadas;
+    private Professor _professor;
+    
     private final Principal _tela;
     /**
-     * Creates new form AdicionarProfessores
+     * Creates new form EditarProfessores
      * @param aula
      * @param tela
      */
-    public AdicionarProfessores(Aula aula, Principal tela) {
+    public EditarProfessores(Aula aula, Principal tela) {
         initComponents();
         _aula = aula;
         _listTodasMaterias = new ArrayList(_aula.getMaterias());
@@ -66,26 +70,49 @@ public class AdicionarProfessores extends javax.swing.JPanel {
   
     
     private void trocarMaterias(JList lista, Vector <Materia> origem, Vector <Materia> destino){
-        lista.getLastVisibleIndex();
-        List<Materia> itens = lista.getSelectedValuesList();
-        if(!origem.isEmpty()){
+        if(existeMateriasSelecionadas(lista)){
+            List<Materia> itens = lista.getSelectedValuesList();
             for(Materia m: itens){
                 origem.remove(m);
                 destino.add(m);
             }   
             atualizarListas();
         }
-
     }
     
-    private void criarProfessor(){
+    private boolean existeMateriasSelecionadas(JList lista){
+        return lista.getLastVisibleIndex() != -1;
+    }
+    
+    
+    public void professorEscolhido(Professor professor) {
+        _professor = professor;
+    }
+    public void organizarGUI(){
+        Set matTodas = new HashSet(_aula.getMaterias());
+        Set matProf = _professor.getMateriasLecionadas();
+        System.out.println("Materias professor: " + matProf);
+        textFieldNome.setText(_professor.getNome());
+        _materiasLecionadas = new Vector(matProf);
+        System.out.println("Materias lecionadas: " + _materiasLecionadas);
+        matTodas.removeAll(matProf);
+        System.out.println("Materias disponiveis: " + matTodas);
+        _materiasDisponiveis = new Vector(matTodas);
+        
+        atualizarListas();
+        
+    }
+    
+    private void reCriarProfessor(){
+        Set professores = _aula.getProfessores();
+        professores.remove(_professor);
         String nome = textFieldNome.getText();
         System.out.println("nome: " + nome);
         String nomeSemEspaco = nome.replaceAll("\\s+","");
         Professor prof = new Professor(nomeSemEspaco);
         carregarMaterias(prof);
-        Set professores = _aula.getProfessores();
         professores.add(prof);
+        _professor = prof;
         
     }
     
@@ -94,6 +121,9 @@ public class AdicionarProfessores extends javax.swing.JPanel {
             prof.addMateria(m);
         }
     }
+
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,7 +136,7 @@ public class AdicionarProfessores extends javax.swing.JPanel {
 
         labelNome = new javax.swing.JLabel();
         textFieldNome = new javax.swing.JTextField();
-        botaoAdicionar = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
         botaoResetMaterias = new javax.swing.JButton();
         botaoEditHorarios = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -124,10 +154,10 @@ public class AdicionarProfessores extends javax.swing.JPanel {
         textFieldNome.setColumns(10);
         textFieldNome.setText("Nome Professor");
 
-        botaoAdicionar.setText("Adicionar");
-        botaoAdicionar.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.setText("Salvar");
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAdicionarActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
 
@@ -194,7 +224,7 @@ public class AdicionarProfessores extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(botaoEditHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(botaoResetMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(botaoSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(45, 45, 45))))))
         );
         layout.setVerticalGroup(
@@ -218,7 +248,7 @@ public class AdicionarProfessores extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaoAdicionar)
+                                .addComponent(botaoSalvar)
                                 .addGap(31, 31, 31)
                                 .addComponent(botaoResetMaterias)
                                 .addGap(33, 33, 33)
@@ -229,11 +259,10 @@ public class AdicionarProfessores extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
-        
-        criarProfessor();
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
+        reCriarProfessor();
         _tela.refresh();
-    }//GEN-LAST:event_botaoAdicionarActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     private void botaoAdicionarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarMateriaActionPerformed
         trocarMaterias(listMateriasDisponiveis,_materiasDisponiveis,_materiasLecionadas);
@@ -250,11 +279,11 @@ public class AdicionarProfessores extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoAdicionar;
     private javax.swing.JButton botaoAdicionarMateria;
     private javax.swing.JButton botaoEditHorarios;
     private javax.swing.JButton botaoRemoverMateria;
     private javax.swing.JButton botaoResetMaterias;
+    private javax.swing.JButton botaoSalvar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
@@ -264,4 +293,6 @@ public class AdicionarProfessores extends javax.swing.JPanel {
     private javax.swing.JList listMateriasLecionadas;
     private javax.swing.JTextField textFieldNome;
     // End of variables declaration//GEN-END:variables
+
+    
 }

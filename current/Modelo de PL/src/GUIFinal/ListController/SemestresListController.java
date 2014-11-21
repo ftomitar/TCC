@@ -6,12 +6,14 @@
 
 package GUIFinal.ListController;
 
-import GUIFinal.AdicionarProfessores;
-import GUIFinal.AdicionarSemestres;
+import GUIFinal.Semestres.AdicionarSemestres;
+import GUIFinal.Semestres.EditarSemestres;
 import GUIFinal.Principal;
 import Modelo.de.PL.Aula;
+import Modelo.de.PL.Semestre;
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JPanel;
 
 /**
  *
@@ -23,22 +25,28 @@ public class SemestresListController implements IListController{
     private JList _listaPrincipal;
     private Aula _aula;
     private JFrame _telaAdicionarSemestres;
+    private JFrame _telaEditarSemestres;
+    private EditarSemestres _painelEditar;
 
     public SemestresListController(Principal tela, JList listaPrincipal, Aula aula){
         _tela = tela;
         _listaPrincipal = listaPrincipal;
         _aula = aula;
-        _telaAdicionarSemestres = criarTelaAdicionarSemestres();
+        _telaAdicionarSemestres = criarTela(new AdicionarSemestres(_aula, _tela));
+        _painelEditar = new EditarSemestres(aula, tela);
+        _telaEditarSemestres = criarTela(_painelEditar);
+        
+    }
+    public JFrame criarTela(JPanel painel){
+        
+        JFrame tela = new JFrame ("Painel Semestres");
+        tela.setDefaultCloseOperation (JFrame.HIDE_ON_CLOSE);
+        tela.getContentPane().add (painel);
+        tela.pack();
+        tela.setVisible(false);
+        return tela;
     }
     
-    private JFrame criarTelaAdicionarSemestres(){
-        JFrame telaAdicionarSemestres =new JFrame ("Painel Professores");
-        telaAdicionarSemestres.setDefaultCloseOperation (JFrame.HIDE_ON_CLOSE);
-        telaAdicionarSemestres.getContentPane().add (new AdicionarSemestres(_aula, _tela));
-        telaAdicionarSemestres.pack();
-        telaAdicionarSemestres.setVisible(false);
-        return telaAdicionarSemestres;
-    }
     
     @Override
     public void adicionar() {
@@ -47,7 +55,14 @@ public class SemestresListController implements IListController{
 
     @Override
     public void editar(Object escolhido) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(escolhido != null){
+            _painelEditar.semestreEscolhido((Semestre)escolhido);
+            _painelEditar.organizarGUI();
+            _telaEditarSemestres.setVisible(true);
+        }
+        else{
+            System.out.println("seleção vazia");
+        }
     }
 
     @Override

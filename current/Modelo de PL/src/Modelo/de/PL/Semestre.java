@@ -12,7 +12,7 @@ import java.util.Set;
  *
  * @author aaratame
  */
-public class Semestre {
+public class Semestre implements Comparable{
     String nome = null;
     Set<Materia> materias;
     public Semestre(String nome){
@@ -34,6 +34,10 @@ public class Semestre {
         return status;
     }
     
+    public Set getMateriasLecionadas(){
+        return materias;
+    }
+    
     public String getNome(){
         
         return nome;
@@ -41,6 +45,14 @@ public class Semestre {
     
     public String toString(){
         return nome;
+    }
+
+    @Override
+    public int compareTo(Object outroSemestre) {
+         if (!(outroSemestre instanceof Semestre))
+            throw new ClassCastException("A Semestre object expected.");
+        String outraSemestreNome = ((Semestre) outroSemestre).getNome();
+        return nome.compareTo(outraSemestreNome);
     }
     
 }

@@ -14,7 +14,7 @@ import java.util.Set;
  *
  * @author aaratame
  */
-public class Professor {
+public class Professor implements Comparable{
     
     private String nome;
     private Set materias;
@@ -77,5 +77,13 @@ public class Professor {
     
     public String toString(){
         return nome;
+    }
+    
+    @Override
+    public int compareTo(Object outroProfessor) {
+         if (!(outroProfessor instanceof Professor))
+            throw new ClassCastException("A Professor object expected.");
+        String outroProfessorNome = ((Professor) outroProfessor).getNome();
+        return nome.compareTo(outroProfessorNome);
     }
 }
