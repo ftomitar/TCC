@@ -142,6 +142,11 @@ public class AdicionarProfessores extends javax.swing.JPanel {
         });
 
         botaoEditHorarios.setText("Editar Horario Livre");
+        botaoEditHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEditHorariosActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(listMateriasDisponiveis);
 
@@ -250,6 +255,10 @@ public class AdicionarProfessores extends javax.swing.JPanel {
     private void botaoResetMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResetMateriasActionPerformed
         iniciarListas();
     }//GEN-LAST:event_botaoResetMateriasActionPerformed
+
+    private void botaoEditHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditHorariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoEditHorariosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
