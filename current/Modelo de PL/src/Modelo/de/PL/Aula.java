@@ -23,6 +23,9 @@ public class Aula {
     private Set <Horario> horarios;
     private Set <Semestre> semestres;
     
+    private int x = 3;
+    private int y = 5;
+    
     public Aula(){
         professores = new HashSet<Professor>();
         materias = new HashSet <Materia>();
@@ -110,7 +113,23 @@ public class Aula {
         
         return semestres;
     }
-
+    
+    
+    public void setQuadroLargura(int largura){
+        x = largura;
+    }
+    
+    public void setQuadroAltura(int altura){
+        y = altura;
+    }
+    
+    public int getQuadroLargura(){
+        return x;
+    }
+    
+    public int getQuadroAltura(){
+        return y;
+    }
     
     
 }

@@ -27,13 +27,15 @@ public final class ProfessoresListController implements IListController{
     private JFrame _telaAdicionarProfessores;
     private JFrame _telaEditarProfessores;
     
+    private AdicionarProfessores _painelAdicionar;
     private EditarProfessores _painelEditar;
 
     public ProfessoresListController(Principal tela,JList listaPrincipal, Aula aula){
         _tela = tela;
         _listaPrincipal = listaPrincipal;
         _aula = aula;
-        _telaAdicionarProfessores = criarTela(new AdicionarProfessores(aula, tela));
+        _painelAdicionar = new AdicionarProfessores(aula, tela);
+        _telaAdicionarProfessores = criarTela(_painelAdicionar);
         _painelEditar = new EditarProfessores(aula, tela);
         _telaEditarProfessores = criarTela(_painelEditar);
     }
@@ -74,6 +76,11 @@ public final class ProfessoresListController implements IListController{
     @Override
     public void refresh() {
         _listaPrincipal.setListData(_aula.getProfessores().toArray());
+    }
+    
+    public void refreshBoardSize(){
+        _painelAdicionar.refreshBoardSize();
+        _painelEditar.refreshBoardSize();
     }
     
 }

@@ -16,39 +16,40 @@ import lpsolve.*;
  */
 public class LPSolveInterface {
     String file;
+    LpSolve _solver;
     public LPSolveInterface(String file){
         this.file = file;
+        try{
+            _solver = LpSolve.readXLI("xli_lindo", file, null, null, 6);
+            _solver.setOutputfile("");
+        }
+       catch(Exception e){
+            e.printStackTrace();
+        }
     }
     
     public String solveModel(){
         String solution = "";
         try{
             
-            LpSolve solver;
-            solver = LpSolve.readXLI("xli_lindo", file, null, null, 6);
+            
+           
             //solver.setOutputfile("C:\\Users\\alexandre\\Downloads\\lp_solve_5.5.2.0_exe_win32\\solution.txt");
-            solver.setOutputfile("");
+           
             //solver.writeXLI("C:\\Users\\alexandre\\Downloads\\lp_solve_5.5.2.0_exe_win32\\solution.txt", null, false
-            solver.solve();
+            _solver.solve();
             
             
-            double [] lista = solver.getPtrVariables();
+            double [] lista = _solver.getPtrVariables();
             List <String> nomes = new ArrayList<>();
-            
-            
-            
-            
-            
             for(int k = 1; k<lista.length +1; k++){
-                nomes.add(solver.getColName(k));
+                nomes.add(_solver.getColName(k));
             }
             for (int i = 0; i< lista.length; i++){
                 double valor = lista[i];
                 String data = nomes.get(i) + ";" + valor +"\n";
                 solution = solution + data;
             }
-            
-            
             
         }
         catch(Exception e){

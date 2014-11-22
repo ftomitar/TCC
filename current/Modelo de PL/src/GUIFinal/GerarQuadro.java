@@ -6,6 +6,7 @@
 
 package GUIFinal;
 
+import Modelo.de.PL.Aula;
 import javax.swing.JFrame;
 
 /**
@@ -14,13 +15,16 @@ import javax.swing.JFrame;
  */
 public class GerarQuadro extends javax.swing.JPanel {
     private Principal _principal;
+    private Aula _aula;
     /**
      * Creates new form gerarQuadro
      * @param principal
      */
-    public GerarQuadro(Principal principal) {
+    public GerarQuadro(Principal principal, Aula aula) {
         _principal = principal;
+        _aula = aula;
         initComponents();
+        labelDadosInvalidos.setVisible(false);
     }
 
     /**
@@ -37,6 +41,7 @@ public class GerarQuadro extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         botaoGerar = new javax.swing.JButton();
+        labelDadosInvalidos = new javax.swing.JLabel();
 
         textFieldX.setColumns(3);
         textFieldX.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -59,24 +64,32 @@ public class GerarQuadro extends javax.swing.JPanel {
             }
         });
 
+        labelDadosInvalidos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelDadosInvalidos.setText("Dados invalidos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(textFieldX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(textFieldY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                .addComponent(botaoGerar)
-                .addGap(69, 69, 69))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelDadosInvalidos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textFieldX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(textFieldY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                                .addComponent(botaoGerar)
+                                .addGap(69, 69, 69))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel2)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,12 +102,25 @@ public class GerarQuadro extends javax.swing.JPanel {
                     .addComponent(textFieldY, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(botaoGerar))
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(labelDadosInvalidos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarActionPerformed
-        _principal.setBoardSize(Integer.parseInt(textFieldX.getText()),Integer.parseInt(textFieldY.getText()));
+        
+        try{
+            int x = Integer.parseInt(textFieldX.getText());
+            int y = Integer.parseInt(textFieldY.getText());
+            _aula.setQuadroLargura(x);
+            _aula.setQuadroAltura(y);
+            _principal.refreshBoardSize();
+        }
+        catch(NumberFormatException e){
+            labelDadosInvalidos.setVisible(true);
+        }
+        
     }//GEN-LAST:event_botaoGerarActionPerformed
 
 
@@ -102,6 +128,7 @@ public class GerarQuadro extends javax.swing.JPanel {
     private javax.swing.JButton botaoGerar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel labelDadosInvalidos;
     private javax.swing.JTextField textFieldX;
     private javax.swing.JTextField textFieldY;
     // End of variables declaration//GEN-END:variables

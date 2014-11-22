@@ -5,16 +5,16 @@
         <group>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Professores/EditarHorarios.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Principal.java</file>
-            <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Professores/EditarProfessores.java</file>
-            <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/ControllerAndListener/ITelaMateria.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/ListController/ProfessoresListController.java</file>
+            <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Professores/EditarProfessores.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/EditarMaterias.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/ControllerAndListener/MateriaSemestreListController.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/Teste/Parser.java</file>
-            <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/GerarQuadro.java</file>
+            <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Professores/NewJFrame.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Professores/AdicionarProfessores.java</file>
-            <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/ControllerAndListener/MateriaProfessoresListController.java</file>
+            <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/ControllerAndListener/ITelaMateria.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/ControllerAndListener/ComboOptionActionListener.java</file>
+            <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/ControllerAndListener/MateriaProfessoresListController.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/AdicionarMaterias.java</file>
             <file>file:/C:/Users/Alexandre/tcc/TCC/current/Modelo%20de%20PL/src/GUIFinal/Materias/ControllerAndListener/ITelaMateriasListController.java</file>
         </group>

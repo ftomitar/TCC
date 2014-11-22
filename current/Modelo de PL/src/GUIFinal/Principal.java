@@ -18,6 +18,10 @@ import Modelo.de.PL.Aula;
 import Modelo.de.PL.Materia;
 import Modelo.de.PL.Professor;
 import Modelo.de.PL.Semestre;
+import Strategy.IStrategy;
+import Strategy.StrategyAlgoritmoGenetico;
+import Strategy.StrategyProgramacaoLinear;
+import Teste.Parser;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -40,12 +44,16 @@ public class Principal extends javax.swing.JFrame {
     
     
     private IListController _listController;
-    private IListController _professoresListController;
-    private IListController _materiasListController;
-    private IListController _semestresListController;
+    private ProfessoresListController _professoresListController;
+    private MateriasListController _materiasListController;
+    private SemestresListController _semestresListController;
             
     private JFrame _quadroInicial;
     private JFrame _telaAdicionarProfessores;
+    
+    private IStrategy _strategy;
+    private StrategyProgramacaoLinear _pl;
+    private StrategyAlgoritmoGenetico _ag;
     /**
      * Creates new form Principal
      */
@@ -58,7 +66,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         inicializarListeners();
         //telaQuadro.setVisible(true);
-            
+        inicializarSolvers();    
     }
     
     
@@ -68,7 +76,7 @@ public class Principal extends javax.swing.JFrame {
     }
     
     private void gerarTelasAdicionais(){
-        telaQuadro = new GerarQuadro(this);
+        telaQuadro = new GerarQuadro(this, aula);
         
   
         
@@ -95,9 +103,15 @@ public class Principal extends javax.swing.JFrame {
         comboOpcoes.addActionListener(new ComboOpcoesActionListener(this));
     }
     
-    public void setBoardSize(int x, int y){
-        _x = x;
-        _y = y;
+    private void inicializarSolvers(){
+        _pl = new StrategyProgramacaoLinear(aula);
+        _ag = new StrategyAlgoritmoGenetico(aula);
+        
+        _strategy = _pl;
+    }
+    
+    public void refreshBoardSize(){
+        _professoresListController.refreshBoardSize();
         _quadroInicial.setVisible(false);
        
     }
@@ -191,6 +205,10 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
         botaoNovoQuadro = new javax.swing.JButton();
         botaoAdicionar = new javax.swing.JButton();
         botaoRemover = new javax.swing.JButton();
@@ -199,6 +217,9 @@ public class Principal extends javax.swing.JFrame {
         comboOpcoes = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaPrincipal = new javax.swing.JList(aula.getProfessores().toArray());
+        botaoSolucionarProblema = new javax.swing.JButton();
+        botaoRadioPL = new javax.swing.JRadioButton();
+        botaoRadioAG = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -243,6 +264,19 @@ public class Principal extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(listaPrincipal);
 
+        botaoSolucionarProblema.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botaoSolucionarProblema.setText("Solucionar problema");
+        botaoSolucionarProblema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSolucionarProblemaActionPerformed(evt);
+            }
+        });
+
+        botaoRadioPL.setSelected(true);
+        botaoRadioPL.setText("PL");
+
+        botaoRadioAG.setText("AG");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -250,11 +284,12 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(comboOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botaoRadioPL)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoRadioAG))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(botaoAdicionar)
@@ -266,8 +301,12 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(botaoNovoQuadro)
                             .addGap(18, 18, 18)
-                            .addComponent(botaoRemover))))
-                .addGap(48, 48, 48))
+                            .addComponent(botaoRemover)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(comboOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoSolucionarProblema, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,14 +321,20 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botaoAdicionar)
                             .addComponent(botaoEditar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(comboOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(106, 106, 106))
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoSolucionarProblema, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(48, Short.MAX_VALUE))))
+                        .addGap(9, 9, 9)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoRadioPL)
+                    .addComponent(botaoRadioAG))
+                .addContainerGap())
         );
 
         pack();
@@ -317,6 +362,23 @@ public class Principal extends javax.swing.JFrame {
         Object ob = listaPrincipal.getSelectedValue();
         _listController.editar(ob);
     }//GEN-LAST:event_botaoEditarActionPerformed
+
+    private void botaoSolucionarProblemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSolucionarProblemaActionPerformed
+        if(botaoRadioPL.isSelected()){
+            _strategy = _pl;
+        }
+        else if(botaoRadioAG.isSelected()){
+            _strategy = _ag;
+        }
+        else{
+            System.out.println("O ANIMAL,");
+            System.out.println("NENHUM BOTAO SELECIONADO xD");
+        }
+        
+        Parser parser = new Parser();
+
+        parser.gerarQuadro(_strategy.obterSolucao());
+    }//GEN-LAST:event_botaoSolucionarProblemaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,7 +419,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton botaoAdicionar;
     private javax.swing.JButton botaoEditar;
     private javax.swing.JButton botaoNovoQuadro;
+    private javax.swing.JRadioButton botaoRadioAG;
+    private javax.swing.JRadioButton botaoRadioPL;
     private javax.swing.JButton botaoRemover;
+    private javax.swing.JButton botaoSolucionarProblema;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JComboBox comboOpcoes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

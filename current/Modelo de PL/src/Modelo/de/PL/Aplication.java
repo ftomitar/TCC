@@ -129,68 +129,68 @@ public class Aplication {
     
     public void gerarResticaoHorario(){
         Professor lisbete = professores.get("lisbete");
-        lisbete.addHoraDisp(horarios.get(0));
-        lisbete.addHoraDisp(horarios.get(1));
-        lisbete.addHoraDisp(horarios.get(3));
-        lisbete.addHoraDisp(horarios.get(4));
-        lisbete.addHoraDisp(horarios.get(6));
-        lisbete.addHoraDisp(horarios.get(7));
-        lisbete.addHoraDisp(horarios.get(9));
-        lisbete.addHoraDisp(horarios.get(10));
-        lisbete.addHoraDisp(horarios.get(12));
-        lisbete.addHoraDisp(horarios.get(13));
+        lisbete.addHorarioDisponivel(horarios.get(0));
+        lisbete.addHorarioDisponivel(horarios.get(1));
+        lisbete.addHorarioDisponivel(horarios.get(3));
+        lisbete.addHorarioDisponivel(horarios.get(4));
+        lisbete.addHorarioDisponivel(horarios.get(6));
+        lisbete.addHorarioDisponivel(horarios.get(7));
+        lisbete.addHorarioDisponivel(horarios.get(9));
+        lisbete.addHorarioDisponivel(horarios.get(10));
+        lisbete.addHorarioDisponivel(horarios.get(12));
+        lisbete.addHorarioDisponivel(horarios.get(13));
         
         Professor milton = professores.get("milton");
-        milton.addHoraDisp(horarios.get(2));
-        milton.addHoraDisp(horarios.get(3));
-        milton.addHoraDisp(horarios.get(4));
-        milton.addHoraDisp(horarios.get(5));
-        milton.addHoraDisp(horarios.get(8));
-        milton.addHoraDisp(horarios.get(9));
-        milton.addHoraDisp(horarios.get(10));
-        milton.addHoraDisp(horarios.get(11));
-        milton.addHoraDisp(horarios.get(14));
+        milton.addHorarioDisponivel(horarios.get(2));
+        milton.addHorarioDisponivel(horarios.get(3));
+        milton.addHorarioDisponivel(horarios.get(4));
+        milton.addHorarioDisponivel(horarios.get(5));
+        milton.addHorarioDisponivel(horarios.get(8));
+        milton.addHorarioDisponivel(horarios.get(9));
+        milton.addHorarioDisponivel(horarios.get(10));
+        milton.addHorarioDisponivel(horarios.get(11));
+        milton.addHorarioDisponivel(horarios.get(14));
         
         
         
         Professor italo = professores.get("italo");
-        italo.addHoraDisp(horarios.get(1));
-        italo.addHoraDisp(horarios.get(2));
-        italo.addHoraDisp(horarios.get(4));
-        italo.addHoraDisp(horarios.get(5));
-        italo.addHoraDisp(horarios.get(10));
-        italo.addHoraDisp(horarios.get(11));
-        italo.addHoraDisp(horarios.get(13));
-        italo.addHoraDisp(horarios.get(14));
+        italo.addHorarioDisponivel(horarios.get(1));
+        italo.addHorarioDisponivel(horarios.get(2));
+        italo.addHorarioDisponivel(horarios.get(4));
+        italo.addHorarioDisponivel(horarios.get(5));
+        italo.addHorarioDisponivel(horarios.get(10));
+        italo.addHorarioDisponivel(horarios.get(11));
+        italo.addHorarioDisponivel(horarios.get(13));
+        italo.addHorarioDisponivel(horarios.get(14));
         
         Professor satoshi = professores.get("satoshi");
-        satoshi.addHoraDisp(horarios.get(6));
-        satoshi.addHoraDisp(horarios.get(7));
-        satoshi.addHoraDisp(horarios.get(8));
-        satoshi.addHoraDisp(horarios.get(12));
-        satoshi.addHoraDisp(horarios.get(13));
-        satoshi.addHoraDisp(horarios.get(14));
+        satoshi.addHorarioDisponivel(horarios.get(6));
+        satoshi.addHorarioDisponivel(horarios.get(7));
+        satoshi.addHorarioDisponivel(horarios.get(8));
+        satoshi.addHorarioDisponivel(horarios.get(12));
+        satoshi.addHorarioDisponivel(horarios.get(13));
+        satoshi.addHorarioDisponivel(horarios.get(14));
         
         Professor wladmir = professores.get("wladmir");
-        wladmir.addHoraDisp(horarios.get(0));
-        wladmir.addHoraDisp(horarios.get(2));
-        wladmir.addHoraDisp(horarios.get(3));
-        wladmir.addHoraDisp(horarios.get(6));
-        wladmir.addHoraDisp(horarios.get(7));
-        wladmir.addHoraDisp(horarios.get(13));
-        wladmir.addHoraDisp(horarios.get(14));
+        wladmir.addHorarioDisponivel(horarios.get(0));
+        wladmir.addHorarioDisponivel(horarios.get(2));
+        wladmir.addHorarioDisponivel(horarios.get(3));
+        wladmir.addHorarioDisponivel(horarios.get(6));
+        wladmir.addHorarioDisponivel(horarios.get(7));
+        wladmir.addHorarioDisponivel(horarios.get(13));
+        wladmir.addHorarioDisponivel(horarios.get(14));
         
         Professor carlos = professores.get("carlos");
-        carlos.addHoraDisp(horarios.get(0));
-        carlos.addHoraDisp(horarios.get(2));
-        carlos.addHoraDisp(horarios.get(3));
-        carlos.addHoraDisp(horarios.get(5));
-        carlos.addHoraDisp(horarios.get(6));
-        carlos.addHoraDisp(horarios.get(8));
-        carlos.addHoraDisp(horarios.get(9));
-        carlos.addHoraDisp(horarios.get(11));
-        carlos.addHoraDisp(horarios.get(12));
-        carlos.addHoraDisp(horarios.get(14));       
+        carlos.addHorarioDisponivel(horarios.get(0));
+        carlos.addHorarioDisponivel(horarios.get(2));
+        carlos.addHorarioDisponivel(horarios.get(3));
+        carlos.addHorarioDisponivel(horarios.get(5));
+        carlos.addHorarioDisponivel(horarios.get(6));
+        carlos.addHorarioDisponivel(horarios.get(8));
+        carlos.addHorarioDisponivel(horarios.get(9));
+        carlos.addHorarioDisponivel(horarios.get(11));
+        carlos.addHorarioDisponivel(horarios.get(12));
+        carlos.addHorarioDisponivel(horarios.get(14));       
         
     }
     

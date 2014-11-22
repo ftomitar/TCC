@@ -26,7 +26,7 @@ public class Professor implements Comparable{
         agenda = new Agenda();
     }
     
-    public void addHoraDisp(Horario periodo){
+    public void addHorarioDisponivel(Horario periodo){
         agenda.addHorarioLivre(periodo);
     }
     

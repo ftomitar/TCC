@@ -10,7 +10,7 @@ package Modelo.de.PL;
  *
  * @author aaratame
  */
-public class Horario {
+public class Horario implements Comparable{
     private String nome;
     public  Horario(String nome){
         this.nome = nome;
@@ -19,6 +19,18 @@ public class Horario {
     public String getNome(){
         
         return nome;
+    }
+    
+    public String toString(){
+        return nome;
+    }
+    
+    @Override
+    public int compareTo(Object outrohorario) {
+         if (!(outrohorario instanceof Horario))
+            throw new ClassCastException("A Horario object expected.");
+        String outroHorarioNome = ((Horario) outrohorario).getNome();
+        return nome.compareTo(outroHorarioNome);
     }
 
 }

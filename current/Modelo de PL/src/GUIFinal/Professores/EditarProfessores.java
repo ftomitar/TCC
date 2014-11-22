@@ -8,6 +8,7 @@ package GUIFinal.Professores;
 
 import GUIFinal.Principal;
 import Modelo.de.PL.Aula;
+import Modelo.de.PL.Horario;
 import Modelo.de.PL.Materia;
 import Modelo.de.PL.Professor;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class EditarProfessores extends javax.swing.JPanel {
     private Vector <Materia>_materiasLecionadas;
     private Professor _professor;
     
+    private EditarHorarios _editarHorarios;
     private final Principal _tela;
     /**
      * Creates new form EditarProfessores
@@ -43,6 +45,7 @@ public class EditarProfessores extends javax.swing.JPanel {
         Collections.sort(_listTodasMaterias);
         iniciarListas();
         _tela = tela;
+        _editarHorarios = new EditarHorarios(aula);
     }
     
     private void iniciarListas(){
@@ -111,6 +114,7 @@ public class EditarProfessores extends javax.swing.JPanel {
         String nomeSemEspaco = nome.replaceAll("\\s+","");
         Professor prof = new Professor(nomeSemEspaco);
         carregarMaterias(prof);
+        carregarHorarios(prof);
         professores.add(prof);
         _professor = prof;
         
@@ -120,6 +124,17 @@ public class EditarProfessores extends javax.swing.JPanel {
         for( Materia m: _materiasLecionadas){
             prof.addMateria(m);
         }
+    }
+    
+    private void carregarHorarios(Professor prof){
+        Set<Horario> horarios = _editarHorarios.getHorariosProfessor();
+        for( Horario h: horarios){
+            prof.addHorarioDisponivel(h);
+        }
+    }
+    
+    public void refreshBoardSize(){
+        _editarHorarios.refreshBoardSize();
     }
 
     
@@ -147,6 +162,7 @@ public class EditarProfessores extends javax.swing.JPanel {
         botaoAdicionarMateria = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        botaoResetarHorario = new javax.swing.JButton();
 
         labelNome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelNome.setText("Nome: ");
@@ -169,6 +185,11 @@ public class EditarProfessores extends javax.swing.JPanel {
         });
 
         botaoEditHorarios.setText("Editar Horario Livre");
+        botaoEditHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEditHorariosActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(listMateriasDisponiveis);
 
@@ -191,6 +212,13 @@ public class EditarProfessores extends javax.swing.JPanel {
         jLabel2.setText("Materias Disponiveis");
 
         jLabel3.setText("Materias Lecionadas");
+
+        botaoResetarHorario.setText("Resetar Horario");
+        botaoResetarHorario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoResetarHorarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -224,7 +252,8 @@ public class EditarProfessores extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(botaoEditHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(botaoResetMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(botaoSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoResetarHorario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(45, 45, 45))))))
         );
         layout.setVerticalGroup(
@@ -252,7 +281,9 @@ public class EditarProfessores extends javax.swing.JPanel {
                                 .addGap(31, 31, 31)
                                 .addComponent(botaoResetMaterias)
                                 .addGap(33, 33, 33)
-                                .addComponent(botaoEditHorarios))
+                                .addComponent(botaoEditHorarios)
+                                .addGap(34, 34, 34)
+                                .addComponent(botaoResetarHorario))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                             .addComponent(jScrollPane2))))
                 .addContainerGap(42, Short.MAX_VALUE))
@@ -277,12 +308,23 @@ public class EditarProfessores extends javax.swing.JPanel {
         iniciarListas();
     }//GEN-LAST:event_botaoResetMateriasActionPerformed
 
+    private void botaoResetarHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResetarHorarioActionPerformed
+        _editarHorarios.resetarHorarios();
+    }//GEN-LAST:event_botaoResetarHorarioActionPerformed
+
+    private void botaoEditHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditHorariosActionPerformed
+        _editarHorarios.setProfessor(_professor);
+        _editarHorarios.organizarGUI();
+        _editarHorarios.setVisible(true);
+    }//GEN-LAST:event_botaoEditHorariosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAdicionarMateria;
     private javax.swing.JButton botaoEditHorarios;
     private javax.swing.JButton botaoRemoverMateria;
     private javax.swing.JButton botaoResetMaterias;
+    private javax.swing.JButton botaoResetarHorario;
     private javax.swing.JButton botaoSalvar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
