@@ -84,7 +84,8 @@ public class Parser {
     
     private boolean aulaVazia(String aula, char[] pos){
         boolean status = false;
-        
+        List <Character> aulaPosList = new ArrayList<>();
+        aulaPosList.toArray();
         char [] aulaPos = aula.toCharArray();
         
         
@@ -260,8 +261,10 @@ public class Parser {
     
     
     private char[] iniciarContador( int size){
+        List<Character> contadorLista = new ArrayList<>();
         char []contador = new char[size];
         for(int i = 0; i < size; i++){
+            contadorLista.add('A');
             contador[i] = 'A';
         }
         

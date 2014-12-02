@@ -31,7 +31,9 @@ public class MockGenerico {
     List<Horario> horarios;
     Map<String, Semestre> semestres;
     
-    char semestre = '@';
+    final int maxMock = 338;
+    char semestre = 'A';
+    String semestreString = "AA";
     public MockGenerico(){
         professores = new HashMap<String, Professor>();
         materias = new HashMap<String, Materia>();
@@ -39,13 +41,14 @@ public class MockGenerico {
         semestres = new HashMap<String, Semestre>();
         //semestre =  'A';
         
-        int potenciaProblema = 13;
+        int potenciaProblema = 1;
         gerarHorarios();
         gerarSemestres(potenciaProblema * 2);
-        char posfix = 'A';
+        String posfix = "AA";
         for (int i = 0; i< potenciaProblema; i++){
+            //System.out.println("Posfix: " + posfix);
             inicializar(posfix +  "");
-            posfix++;
+            posfix = increaseSemestre(posfix);
         }
         
     }
@@ -127,11 +130,12 @@ public class MockGenerico {
     }
     
     public void gerarSemestres(int quantidade){
-        char teste = 'A';
+        String teste = "AA";
         
         for(int i = 0; i<quantidade; i++){
-            semestres.put(teste + "", new Semestre(teste + ""));
-            teste++;
+            System.out.println("Semestre Criado: " + teste);
+            semestres.put(teste , new Semestre(teste));
+            teste = increaseSemestre(teste);
         }
         /*        
         semestres.put("A", new Semestre("A"));
@@ -250,9 +254,9 @@ public class MockGenerico {
     }
     
     public void gerarRestricaoSemestre(String posfixo){
-        semestre ++;
-        System.out.println("Semestre: " + semestre );
-        Semestre primeiro = semestres.get(semestre + "");
+        
+        //System.out.println("Semestre: " + semestreString );
+        Semestre primeiro = semestres.get(semestreString);
         
         primeiro.addMateria(materias.get("Algoritmos"+ posfixo));
         primeiro.addMateria(materias.get("EstruturaDeDados"+ posfixo));
@@ -264,9 +268,11 @@ public class MockGenerico {
         primeiro.addMateria(materias.get("EST"+ posfixo));
         primeiro.addMateria(materias.get("ESP"+ posfixo));
         
-        semestre ++;
-        System.out.println("Semestre: " + semestre );
-        Semestre segundo = semestres.get(semestre + "");
+        
+        semestreString = increaseSemestre(semestreString);
+        //System.out.println("Semestre: " + semestreString );
+        
+        Semestre segundo = semestres.get(semestreString);
         segundo.addMateria(materias.get("RedesII"+ posfixo));
         segundo.addMateria(materias.get("LabRedesII"+ posfixo));
         segundo.addMateria(materias.get("BancoDeDadosII"+ posfixo));
@@ -276,8 +282,47 @@ public class MockGenerico {
         segundo.addMateria(materias.get("Grafos"+ posfixo));
         segundo.addMateria(materias.get("SistemasDistribuidos"+ posfixo));
         
+        semestreString = increaseSemestre(semestreString);
         
     }
+    
+    private String increaseSemestre(String teste){
+
+        char[] pos = teste.toCharArray();
+        
+         // Suporta até 676 posições 26*26 (verifico apenas a ultima letra e aumento a penultima.
+        
+        int size = pos.length;
+        char begin = 'A';
+        char end = 'Z';
+        char last = pos[size -1];
+        try{
+            if(last == end){
+               /*
+                System.out.println("last:" + last);
+                System.out.println("end:" + end);
+                System.out.println("Size:" + size);
+                System.out.println("Size:" + size);
+                */
+                pos[size - 2]++;
+                //System.out.println("Primeiro:" + pos[size - 2]);
+                pos[size -1] = begin;
+            }
+            else{
+               
+                pos[size-1]++;
+                
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        teste = new String (pos);
+        //System.out.println("Teste: " +teste);
+        return teste;
+    }
+    
     
     
     public void inicializarAulas(Aula aula){
