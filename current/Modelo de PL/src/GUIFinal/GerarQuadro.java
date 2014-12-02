@@ -7,6 +7,7 @@
 package GUIFinal;
 
 import Modelo.de.PL.Aula;
+import Modelo.de.PL.Horario;
 import javax.swing.JFrame;
 
 /**
@@ -116,6 +117,13 @@ public class GerarQuadro extends javax.swing.JPanel {
             _aula.setQuadroLargura(x);
             _aula.setQuadroAltura(y);
             _principal.refreshBoardSize();
+            int size = x*y;
+            char letra = 'A';
+            for(int i = 0; i<size; i++){
+                
+                _aula.addHorario(new Horario(letra + ""));
+                letra++;
+            }
         }
         catch(NumberFormatException e){
             labelDadosInvalidos.setVisible(true);

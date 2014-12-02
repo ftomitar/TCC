@@ -52,7 +52,11 @@ public class AdicionarMaterias extends javax.swing.JPanel implements ITelaMateri
         initComponents();
         
         _aula = aula;
-               
+        _listTodosProfessores = new ArrayList(_aula.getProfessores());
+        Collections.sort(_listTodosProfessores);
+        _listTodosSemestres = new ArrayList(_aula.getSemestres());
+        Collections.sort(_listTodosSemestres); 
+        
         iniciarListas();
         inicializarListControllers();
         inicializarListeners();
@@ -71,12 +75,30 @@ public class AdicionarMaterias extends javax.swing.JPanel implements ITelaMateri
         listController = professoresListController;
     }
     
-    public void iniciarListas(){
+    public void recarregarListas(){
         
         _listTodosProfessores = new ArrayList(_aula.getProfessores());
         Collections.sort(_listTodosProfessores);
         _listTodosSemestres = new ArrayList(_aula.getSemestres());
         Collections.sort(_listTodosSemestres); 
+        _professoresDisponiveis.clear();
+        _professoresDisponiveis.addAll(_listTodosProfessores);
+        _professoresUtilizados.clear();
+        _semestresDisponiveis.clear();
+        _semestresDisponiveis.addAll(_listTodosSemestres);
+        _semestresUtilizados.clear();
+        
+        _elementosDisponiveis = _professoresDisponiveis;
+        _elementosUtilizados = _professoresUtilizados;
+        listElementosDisponiveis.setListData(_professoresDisponiveis);
+        listElementosUtilizados.setListData(_professoresUtilizados);
+        listElementosDisponiveis.setSelectionInterval(0, 0);
+        listElementosUtilizados.setSelectionInterval(0, 0);
+    }
+    
+    private void iniciarListas(){
+        
+        
         
         _professoresDisponiveis = new Vector(_listTodosProfessores);
         _professoresUtilizados = new Vector();

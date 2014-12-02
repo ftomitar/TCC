@@ -6,15 +6,16 @@
 
 package GUIFinal;
 
-import GUIFinal.Professores.AdicionarProfessores;
-import GUIFinal.ActionListener.ComboOpcoesActionListener;
 import GUI.TelaQuadro;
+import GUIFinal.ActionListener.ComboOpcoesActionListener;
 import GUIFinal.ListController.IListController;
 import GUIFinal.ListController.MateriasListController;
 import GUIFinal.ListController.ProfessoresListController;
 import GUIFinal.ListController.SemestresListController;
+import GUIFinal.Professores.AdicionarProfessores;
 import Modelo.de.PL.Aplication;
 import Modelo.de.PL.Aula;
+import Modelo.de.PL.Horario;
 import Modelo.de.PL.Materia;
 import Modelo.de.PL.Professor;
 import Modelo.de.PL.Semestre;
@@ -23,6 +24,7 @@ import Strategy.StrategyAlgoritmoGenetico;
 import Strategy.StrategyProgramacaoLinear;
 import Teste.Parser;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
@@ -36,7 +38,6 @@ import javax.swing.ListModel;
  */
 public class Principal extends javax.swing.JFrame {
     private GerarQuadro telaQuadro;
-    private AdicionarProfessores addProf;
     private int _x = 3;
     private int _y = 5;
     Aula aula;
@@ -49,7 +50,6 @@ public class Principal extends javax.swing.JFrame {
     private SemestresListController _semestresListController;
             
     private JFrame _quadroInicial;
-    private JFrame _telaAdicionarProfessores;
     
     private IStrategy _strategy;
     private StrategyProgramacaoLinear _pl;
@@ -64,6 +64,7 @@ public class Principal extends javax.swing.JFrame {
         gerarTelasAdicionais();
         gerarControladores();
         initComponents();
+        refresh();
         inicializarListeners();
         //telaQuadro.setVisible(true);
         inicializarSolvers();    
@@ -141,13 +142,19 @@ public class Principal extends javax.swing.JFrame {
     public void refresh() {
         switch (_state) {
             case "Professores":
-                listaPrincipal.setListData(aula.getProfessores().toArray());
+                List<Professor> prof = new ArrayList<>(aula.getProfessores());
+                Collections.sort(prof);
+                listaPrincipal.setListData(prof.toArray());
                 break;
             case "Materias":
-                listaPrincipal.setListData(aula.getMaterias().toArray());
+                List<Materia> mat = new ArrayList<>(aula.getMaterias());
+                Collections.sort(mat);
+                listaPrincipal.setListData(mat.toArray());
                 break;
             case "Semestres":
-                listaPrincipal.setListData(aula.getSemestres().toArray());
+                List<Semestre> sem = new ArrayList<>(aula.getSemestres());
+                Collections.sort(sem);
+                listaPrincipal.setListData(sem.toArray());
                 break;
         }
     }
@@ -192,6 +199,40 @@ public class Principal extends javax.swing.JFrame {
         refresh();
         System.out.println("conjunto: " + conjunto);
         System.out.println("conjunto tamanho: " + conjunto.size());
+    }
+    
+    public void printAula(){
+        Set a = aula.getHorarios();
+        Set b = aula.getMaterias();
+        Set c = aula.getProfessores();
+        Set d = aula.getSemestres();
+        System.err.println("Horarios");
+        for(Object x: a){
+            System.out.println(x);
+        }
+        System.err.println("Materias");
+        for(Object x: b){
+            System.out.println(x);
+        }
+        System.err.println("Professores");
+        for(Professor x:(Set<Professor>) c){
+            Set<Horario> livre = x.getPeriodoLivre();
+            System.out.println(x);
+            System.out.println("Horarios livres");
+            for(Horario h: livre){
+                System.out.println(h);
+            }
+        }  
+        System.err.println("Semestres");
+        for(Semestre x:(Set<Semestre>) d){
+            System.out.println(x);
+            Set <Materia> mat = x.getMateriasLecionadas();
+            System.out.println("Materias lecionadas");
+            for(Materia m: mat){
+               System.out.println(m);
+               
+            }
+        }
     }
     
     
@@ -364,11 +405,18 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoEditarActionPerformed
 
     private void botaoSolucionarProblemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSolucionarProblemaActionPerformed
+        printAula();
+        
         if(botaoRadioPL.isSelected()){
-            _strategy = _pl;
-            _strategy.carregarSolucao(); 
-            Parser parser = new Parser();
-            parser.gerarQuadro(_strategy.obterSolucao());
+            try{
+                _strategy = _pl;
+                _strategy.carregarSolucao(); 
+                Parser parser = new Parser();
+                parser.gerarQuadro(_strategy.obterSolucao());
+            }
+            catch(Exception e){
+                
+            }
         }
         if(botaoRadioAG.isSelected()){
             _strategy = _ag;

@@ -53,7 +53,7 @@ public class MateriasListController implements IListController{
     
     @Override
     public void adicionar() {
-        _painelAdicionar.iniciarListas();
+        _painelAdicionar.recarregarListas();
         _telaAdicionarMaterias.setVisible(true);
     }
 

@@ -205,7 +205,7 @@ public class EditarMaterias extends javax.swing.JPanel implements ITelaMateria{
         textFieldNome.setColumns(10);
         textFieldNome.setText("Nome Materia");
 
-        botaoAdicionar.setText("Adicionar");
+        botaoAdicionar.setText("Salvar");
         botaoAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAdicionarActionPerformed(evt);
@@ -305,7 +305,6 @@ public class EditarMaterias extends javax.swing.JPanel implements ITelaMateria{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelQuantidade)
                     .addComponent(textFieldQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

@@ -52,7 +52,7 @@ public class SemestresListController implements IListController{
     
     @Override
     public void adicionar() {
-        _painelAdicionar.iniciarListas();
+        _painelAdicionar.recaregarListas();
         _telaAdicionarSemestres.setVisible(true);
     }
 

@@ -52,7 +52,7 @@ public final class ProfessoresListController implements IListController{
     
     @Override
     public void adicionar() {
-        _painelAdicionar.iniciarListas();
+        _painelAdicionar.recarregarListas();
         _telaAdicionarProfessores.setVisible(true);
     }
 

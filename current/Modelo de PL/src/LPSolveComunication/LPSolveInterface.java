@@ -23,6 +23,9 @@ public class LPSolveInterface {
             _solver = LpSolve.readXLI("xli_lindo", file, null, null, 6);
             _solver.setOutputfile("");
         }
+        catch(lpsolve.LpSolveException e){
+            
+        }
        catch(Exception e){
             e.printStackTrace();
         }
@@ -50,6 +53,9 @@ public class LPSolveInterface {
                 String data = nomes.get(i) + ";" + valor +"\n";
                 solution = solution + data;
             }
+            
+        }
+        catch(NullPointerException e){
             
         }
         catch(Exception e){

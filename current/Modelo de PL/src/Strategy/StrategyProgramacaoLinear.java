@@ -11,6 +11,7 @@ import LPSolveComunication.LPSolveInterface;
 import Modelo.de.PL.Aula;
 import Modelo.de.PL.Cronograma;
 import Modelo.de.PL.IModelOutput;
+import Modelo.de.PL.TerminalOutput;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -53,7 +54,8 @@ public class StrategyProgramacaoLinear implements IStrategy{
     @Override
     public void carregarSolucao() {
         IModelOutput outputManager = new FileManager(path);
-
+        Cronograma teste = new Cronograma(_aula, new TerminalOutput());
+        teste.gerarModelo();
         Cronograma _crono = new Cronograma(_aula, outputManager);
         _crono.gerarModelo();
         _lpsolve = new LPSolveInterface(path);
