@@ -43,7 +43,7 @@ public class Parser {
         JTabbedPane tabPanel = new JTabbedPane();
  
         JFrame frame = new JFrame("Quadro");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         
         aulas = parsearDados(modelo);

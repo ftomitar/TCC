@@ -140,7 +140,7 @@ public class EditarMaterias extends javax.swing.JPanel implements ITelaMateria{
         professoresDisponiveis.removeAll(_professoresUtilizados);
         _professoresDisponiveis.clear();
         _professoresDisponiveis.addAll(professoresDisponiveis);
-        semestresDisponiveis.removeAll(semestresUtilizados);
+        semestresDisponiveis.removeAll(_semestresUtilizados);
         _semestresDisponiveis.clear();
         _semestresDisponiveis.addAll(semestresDisponiveis);
         comboOpcoes.setSelectedItem("Professores");

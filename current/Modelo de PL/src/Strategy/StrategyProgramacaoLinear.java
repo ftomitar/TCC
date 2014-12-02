@@ -23,12 +23,13 @@ import java.util.logging.Logger;
  */
 public class StrategyProgramacaoLinear implements IStrategy{
     
-    
+    Aula _aula;
     LPSolveInterface _lpsolve;
+    String path = "files" + File.separator + "model_LP.txt";
     
     public StrategyProgramacaoLinear(Aula aula){
         
-        String path = "files" + File.separator + "model_LP.txt";
+        _aula = aula;
         
         
        
@@ -45,12 +46,17 @@ public class StrategyProgramacaoLinear implements IStrategy{
             }
         }
        
+        
+       
+    }
+    
+    @Override
+    public void carregarSolucao() {
         IModelOutput outputManager = new FileManager(path);
 
-        Cronograma _crono = new Cronograma(aula, outputManager);
+        Cronograma _crono = new Cronograma(_aula, outputManager);
         _crono.gerarModelo();
         _lpsolve = new LPSolveInterface(path);
-       
     }
     
     @Override
@@ -58,5 +64,7 @@ public class StrategyProgramacaoLinear implements IStrategy{
         
         return _lpsolve.solveModel();
     }
+
+    
     
 }

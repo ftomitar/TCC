@@ -39,15 +39,16 @@ public class AdicionarProfessores extends javax.swing.JPanel {
     public AdicionarProfessores(Aula aula, Principal tela) {
         initComponents();
         _aula = aula;
-        _listTodasMaterias = new ArrayList(_aula.getMaterias());
-        Collections.sort(_listTodasMaterias);
+       
         iniciarListas();
         _tela = tela;
         _editarHorarios = new EditarHorarios(aula);
     }
     
-    private void iniciarListas(){
+    public void iniciarListas(){
         
+        _listTodasMaterias = new ArrayList(_aula.getMaterias());
+        Collections.sort(_listTodasMaterias);
         _materiasDisponiveis = new Vector(_listTodasMaterias);
         _materiasLecionadas = new Vector();
         listMateriasDisponiveis.setListData(_materiasDisponiveis);

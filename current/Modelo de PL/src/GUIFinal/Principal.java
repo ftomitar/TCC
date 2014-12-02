@@ -366,18 +366,21 @@ public class Principal extends javax.swing.JFrame {
     private void botaoSolucionarProblemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSolucionarProblemaActionPerformed
         if(botaoRadioPL.isSelected()){
             _strategy = _pl;
+            _strategy.carregarSolucao(); 
+            Parser parser = new Parser();
+            parser.gerarQuadro(_strategy.obterSolucao());
         }
-        else if(botaoRadioAG.isSelected()){
+        if(botaoRadioAG.isSelected()){
             _strategy = _ag;
+            _strategy.carregarSolucao();  
+            Parser parser = new Parser();
+            parser.gerarQuadro(_strategy.obterSolucao());
         }
-        else{
+        if(!botaoRadioPL.isSelected() && !botaoRadioAG.isSelected() ){
             System.out.println("O ANIMAL,");
             System.out.println("NENHUM BOTAO SELECIONADO xD");
         }
         
-        Parser parser = new Parser();
-
-        parser.gerarQuadro(_strategy.obterSolucao());
     }//GEN-LAST:event_botaoSolucionarProblemaActionPerformed
 
     /**

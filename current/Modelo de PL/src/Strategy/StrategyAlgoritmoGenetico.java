@@ -15,16 +15,21 @@ import Modelo.de.PL.Aula;
  * @author Alexandre
  */
 public class StrategyAlgoritmoGenetico implements IStrategy{
-    
+    Aula _aula;
     AlgoritmoGenetico _ag;
     
     public StrategyAlgoritmoGenetico(Aula aula){
-        _ag = new AlgoritmoGenetico(aula);
+       _aula = aula;
     }
     @Override
     public String obterSolucao() {
         QuadroHorarios qh = _ag.obterHorarios();
         return qh.obterHorarios();
+    }
+
+    @Override
+    public void carregarSolucao() {
+         _ag = new AlgoritmoGenetico(_aula);
     }
     
 }

@@ -12,5 +12,6 @@ package Strategy;
  */
 public interface IStrategy {
     public String obterSolucao();
+    public void carregarSolucao();
         
 }

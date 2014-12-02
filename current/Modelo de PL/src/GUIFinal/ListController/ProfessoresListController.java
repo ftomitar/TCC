@@ -52,6 +52,7 @@ public final class ProfessoresListController implements IListController{
     
     @Override
     public void adicionar() {
+        _painelAdicionar.iniciarListas();
         _telaAdicionarProfessores.setVisible(true);
     }
 

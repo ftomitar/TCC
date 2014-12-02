@@ -26,15 +26,15 @@ public class MateriasListController implements IListController{
     private Aula _aula;
     private JFrame _telaAdicionarMaterias;
     private JFrame _telaEditarMaterias;
-    
+    private AdicionarMaterias _painelAdicionar;
     private EditarMaterias _painelEditar;
 
     public MateriasListController(Principal tela, JList listaPrincipal, Aula aula){
         _tela = tela;
         _listaPrincipal = listaPrincipal;
         _aula = aula;
-        
-        _telaAdicionarMaterias = criarTela(new AdicionarMaterias(aula, tela));
+        _painelAdicionar = new AdicionarMaterias(aula, tela);
+        _telaAdicionarMaterias = criarTela(_painelAdicionar);
         _painelEditar = new EditarMaterias(aula, tela);
         _telaEditarMaterias = criarTela(_painelEditar);
         
@@ -53,6 +53,7 @@ public class MateriasListController implements IListController{
     
     @Override
     public void adicionar() {
+        _painelAdicionar.iniciarListas();
         _telaAdicionarMaterias.setVisible(true);
     }
 

@@ -26,13 +26,15 @@ public class SemestresListController implements IListController{
     private Aula _aula;
     private JFrame _telaAdicionarSemestres;
     private JFrame _telaEditarSemestres;
+    private AdicionarSemestres _painelAdicionar;
     private EditarSemestres _painelEditar;
 
     public SemestresListController(Principal tela, JList listaPrincipal, Aula aula){
         _tela = tela;
         _listaPrincipal = listaPrincipal;
         _aula = aula;
-        _telaAdicionarSemestres = criarTela(new AdicionarSemestres(_aula, _tela));
+        _painelAdicionar = new AdicionarSemestres(_aula, _tela);
+        _telaAdicionarSemestres = criarTela(_painelAdicionar);
         _painelEditar = new EditarSemestres(aula, tela);
         _telaEditarSemestres = criarTela(_painelEditar);
         
@@ -50,6 +52,7 @@ public class SemestresListController implements IListController{
     
     @Override
     public void adicionar() {
+        _painelAdicionar.iniciarListas();
         _telaAdicionarSemestres.setVisible(true);
     }
 

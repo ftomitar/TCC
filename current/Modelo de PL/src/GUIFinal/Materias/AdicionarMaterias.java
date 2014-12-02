@@ -52,10 +52,7 @@ public class AdicionarMaterias extends javax.swing.JPanel implements ITelaMateri
         initComponents();
         
         _aula = aula;
-        _listTodosProfessores = new ArrayList(_aula.getProfessores());
-        Collections.sort(_listTodosProfessores);
-        _listTodosSemestres = new ArrayList(_aula.getSemestres());
-        Collections.sort(_listTodosSemestres);        
+               
         iniciarListas();
         inicializarListControllers();
         inicializarListeners();
@@ -74,7 +71,12 @@ public class AdicionarMaterias extends javax.swing.JPanel implements ITelaMateri
         listController = professoresListController;
     }
     
-    private void iniciarListas(){
+    public void iniciarListas(){
+        
+        _listTodosProfessores = new ArrayList(_aula.getProfessores());
+        Collections.sort(_listTodosProfessores);
+        _listTodosSemestres = new ArrayList(_aula.getSemestres());
+        Collections.sort(_listTodosSemestres); 
         
         _professoresDisponiveis = new Vector(_listTodosProfessores);
         _professoresUtilizados = new Vector();
