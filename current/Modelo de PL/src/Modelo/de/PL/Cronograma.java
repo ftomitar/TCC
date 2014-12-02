@@ -165,8 +165,8 @@ public class Cronograma implements IModelo{
                     }
                     if (eq != ""){
                         eq = eq.substring(0, eq.length()-1); //apaga o ultimo '+'
-                        //eq = eq + "=" + qtdAulas;
-                        eq = eq + "<" + qtdAulas; //Relaxamento de restrições, teste caso a solução seja inviavel
+                        eq = eq + "=" + qtdAulas;
+                        //eq = eq + "<" + qtdAulas; //Relaxamento de restrições, teste caso a solução seja inviavel
                         outputManager.println(eq);
                     }
 

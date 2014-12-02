@@ -81,8 +81,10 @@ public class TelaQuadroHorarios extends javax.swing.JFrame {
 
     private void botaoGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarActionPerformed
         String modelo = textBox.getText();
+        /*
         Parser p = new Parser();
         p.gerarQuadro(modelo);
+        */
     }//GEN-LAST:event_botaoGerarActionPerformed
 
     /**

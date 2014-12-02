@@ -54,8 +54,8 @@ public class StrategyProgramacaoLinear implements IStrategy{
     @Override
     public void carregarSolucao() {
         IModelOutput outputManager = new FileManager(path);
-        Cronograma teste = new Cronograma(_aula, new TerminalOutput());
-        teste.gerarModelo();
+        //Cronograma teste = new Cronograma(_aula, new TerminalOutput());
+        //teste.gerarModelo();
         Cronograma _crono = new Cronograma(_aula, outputManager);
         _crono.gerarModelo();
         _lpsolve = new LPSolveInterface(path);

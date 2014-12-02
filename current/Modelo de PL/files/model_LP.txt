@@ -1,16 +1,482 @@
 MAX
-A&b&NomeProfessor&NomeMateriaB+A&a&NomeProfessor&NomeMateriaB+A&b&NomeProfessora&NomeMateriaA+A&a&NomeProfessora&NomeMateriaA
+DA&N&marye&LabBancoDeDadosIIAB+DA&G&marye&LabBancoDeDadosIIAB+DA&O&marye&LabBancoDeDadosIIAB+DA&M&marye&LabBancoDeDadosIIAB+DA&H&marye&LabBancoDeDadosIIAB+DA&I&marye&LabBancoDeDadosIIAB+DA&N&marye&BancoDeDadosIIAB+DA&G&marye&BancoDeDadosIIAB+DA&O&marye&BancoDeDadosIIAB+DA&M&marye&BancoDeDadosIIAB+DA&H&marye&BancoDeDadosIIAB+DA&I&marye&BancoDeDadosIIAB+DA&N&carla&GrafosAB+DA&G&carla&GrafosAB+DA&B&carla&GrafosAB+DA&D&carla&GrafosAB+DA&J&carla&GrafosAB+DA&M&carla&GrafosAB+DA&H&carla&GrafosAB+DA&E&carla&GrafosAB+DA&K&carla&GrafosAB+DA&A&carla&GrafosAB+DA&L&vega&LabRedesIIAB+DA&F&vega&LabRedesIIAB+DA&D&vega&LabRedesIIAB+DA&J&vega&LabRedesIIAB+DA&O&vega&LabRedesIIAB+DA&E&vega&LabRedesIIAB+DA&K&vega&LabRedesIIAB+DA&I&vega&LabRedesIIAB+DA&C&vega&LabRedesIIAB+DA&L&vega&RedesIIAB+DA&F&vega&RedesIIAB+DA&D&vega&RedesIIAB+DA&J&vega&RedesIIAB+DA&O&vega&RedesIIAB+DA&E&vega&RedesIIAB+DA&K&vega&RedesIIAB+DA&I&vega&RedesIIAB+DA&C&vega&RedesIIAB+DA&L&felipe&LPIAB+DA&G&felipe&LPIAB+DA&F&felipe&LPIAB+DA&D&felipe&LPIAB+DA&J&felipe&LPIAB+DA&O&felipe&LPIAB+DA&M&felipe&LPIAB+DA&I&felipe&LPIAB+DA&A&felipe&LPIAB+DA&C&felipe&LPIAB+DA&N&ferrari&SistemasDistribuidosAB+DA&G&ferrari&SistemasDistribuidosAB+DA&D&ferrari&SistemasDistribuidosAB+DA&O&ferrari&SistemasDistribuidosAB+DA&H&ferrari&SistemasDistribuidosAB+DA&A&ferrari&SistemasDistribuidosAB+DA&C&ferrari&SistemasDistribuidosAB+DA&N&bicas&LPIIAB+DA&L&bicas&LPIIAB+DA&B&bicas&LPIIAB+DA&F&bicas&LPIIAB+DA&O&bicas&LPIIAB+DA&E&bicas&LPIIAB+DA&K&bicas&LPIIAB+DA&C&bicas&LPIIAB+A&N&Wladmir&EST+A&G&Wladmir&EST+A&D&Wladmir&EST+A&O&Wladmir&EST+A&H&Wladmir&EST+A&A&Wladmir&EST+A&C&Wladmir&EST+A&N&Lisbete&EstruturaDeDados+A&G&Lisbete&EstruturaDeDados+A&B&Lisbete&EstruturaDeDados+A&D&Lisbete&EstruturaDeDados+A&J&Lisbete&EstruturaDeDados+A&M&Lisbete&EstruturaDeDados+A&H&Lisbete&EstruturaDeDados+A&E&Lisbete&EstruturaDeDados+A&K&Lisbete&EstruturaDeDados+A&A&Lisbete&EstruturaDeDados+A&N&Lisbete&Algoritmos+A&G&Lisbete&Algoritmos+A&B&Lisbete&Algoritmos+A&D&Lisbete&Algoritmos+A&J&Lisbete&Algoritmos+A&M&Lisbete&Algoritmos+A&H&Lisbete&Algoritmos+A&E&Lisbete&Algoritmos+A&K&Lisbete&Algoritmos+A&A&Lisbete&Algoritmos+A&L&Carlos&ESP+A&G&Carlos&ESP+A&F&Carlos&ESP+A&D&Carlos&ESP+A&J&Carlos&ESP+A&O&Carlos&ESP+A&M&Carlos&ESP+A&I&Carlos&ESP+A&A&Carlos&ESP+A&C&Carlos&ESP+A&N&Satoshi&BancoDeDados+A&G&Satoshi&BancoDeDados+A&O&Satoshi&BancoDeDados+A&M&Satoshi&BancoDeDados+A&H&Satoshi&BancoDeDados+A&I&Satoshi&BancoDeDados+A&N&Italo&EngenhariaDeSoftware+A&L&Italo&EngenhariaDeSoftware+A&B&Italo&EngenhariaDeSoftware+A&F&Italo&EngenhariaDeSoftware+A&O&Italo&EngenhariaDeSoftware+A&E&Italo&EngenhariaDeSoftware+A&K&Italo&EngenhariaDeSoftware+A&C&Italo&EngenhariaDeSoftware+A&N&Italo&OrientacaoObjetos+A&L&Italo&OrientacaoObjetos+A&B&Italo&OrientacaoObjetos+A&F&Italo&OrientacaoObjetos+A&O&Italo&OrientacaoObjetos+A&E&Italo&OrientacaoObjetos+A&K&Italo&OrientacaoObjetos+A&C&Italo&OrientacaoObjetos+A&L&Milton&LabRedes+A&F&Milton&LabRedes+A&D&Milton&LabRedes+A&J&Milton&LabRedes+A&O&Milton&LabRedes+A&E&Milton&LabRedes+A&K&Milton&LabRedes+A&I&Milton&LabRedes+A&C&Milton&LabRedes+A&L&Milton&Redes+A&F&Milton&Redes+A&D&Milton&Redes+A&J&Milton&Redes+A&O&Milton&Redes+A&E&Milton&Redes+A&K&Milton&Redes+A&I&Milton&Redes+A&C&Milton&Redes+C&N&marye&BancoDeDadosAB+C&G&marye&BancoDeDadosAB+C&O&marye&BancoDeDadosAB+C&M&marye&BancoDeDadosAB+C&H&marye&BancoDeDadosAB+C&I&marye&BancoDeDadosAB+C&N&carla&EstruturaDeDadosII+C&G&carla&EstruturaDeDadosII+C&B&carla&EstruturaDeDadosII+C&D&carla&EstruturaDeDadosII+C&J&carla&EstruturaDeDadosII+C&M&carla&EstruturaDeDadosII+C&H&carla&EstruturaDeDadosII+C&E&carla&EstruturaDeDadosII+C&K&carla&EstruturaDeDadosII+C&A&carla&EstruturaDeDadosII+C&N&carla&AlgoritmosII+C&G&carla&AlgoritmosII+C&B&carla&AlgoritmosII+C&D&carla&AlgoritmosII+C&J&carla&AlgoritmosII+C&M&carla&AlgoritmosII+C&H&carla&AlgoritmosII+C&E&carla&AlgoritmosII+C&K&carla&AlgoritmosII+C&A&carla&AlgoritmosII+C&L&vega&RedesAB+C&F&vega&RedesAB+C&D&vega&RedesAB+C&J&vega&RedesAB+C&O&vega&RedesAB+C&E&vega&RedesAB+C&K&vega&RedesAB+C&I&vega&RedesAB+C&C&vega&RedesAB+C&L&vega&LabRedesAB+C&F&vega&LabRedesAB+C&D&vega&LabRedesAB+C&J&vega&LabRedesAB+C&O&vega&LabRedesAB+C&E&vega&LabRedesAB+C&K&vega&LabRedesAB+C&I&vega&LabRedesAB+C&C&vega&LabRedesAB+C&L&felipe&ESP+C&G&felipe&ESP+C&F&felipe&ESP+C&D&felipe&ESP+C&J&felipe&ESP+C&O&felipe&ESP+C&M&felipe&ESP+C&I&felipe&ESP+C&A&felipe&ESP+C&C&felipe&ESP+C&N&ferrari&EST+C&G&ferrari&EST+C&D&ferrari&EST+C&O&ferrari&EST+C&H&ferrari&EST+C&A&ferrari&EST+C&C&ferrari&EST+C&N&bicas&EngenhariaDeSoftwareII+C&L&bicas&EngenhariaDeSoftwareII+C&B&bicas&EngenhariaDeSoftwareII+C&F&bicas&EngenhariaDeSoftwareII+C&O&bicas&EngenhariaDeSoftwareII+C&E&bicas&EngenhariaDeSoftwareII+C&K&bicas&EngenhariaDeSoftwareII+C&C&bicas&EngenhariaDeSoftwareII+C&N&bicas&OrientacaoObjetosII+C&L&bicas&OrientacaoObjetosII+C&B&bicas&OrientacaoObjetosII+C&F&bicas&OrientacaoObjetosII+C&O&bicas&OrientacaoObjetosII+C&E&bicas&OrientacaoObjetosII+C&K&bicas&OrientacaoObjetosII+C&C&bicas&OrientacaoObjetosII+B&N&Wladmir&SistemasDistribuidos+B&G&Wladmir&SistemasDistribuidos+B&D&Wladmir&SistemasDistribuidos+B&O&Wladmir&SistemasDistribuidos+B&H&Wladmir&SistemasDistribuidos+B&A&Wladmir&SistemasDistribuidos+B&C&Wladmir&SistemasDistribuidos+B&N&Lisbete&Grafos+B&G&Lisbete&Grafos+B&B&Lisbete&Grafos+B&D&Lisbete&Grafos+B&J&Lisbete&Grafos+B&M&Lisbete&Grafos+B&H&Lisbete&Grafos+B&E&Lisbete&Grafos+B&K&Lisbete&Grafos+B&A&Lisbete&Grafos+B&L&Carlos&LPI+B&G&Carlos&LPI+B&F&Carlos&LPI+B&D&Carlos&LPI+B&J&Carlos&LPI+B&O&Carlos&LPI+B&M&Carlos&LPI+B&I&Carlos&LPI+B&A&Carlos&LPI+B&C&Carlos&LPI+B&N&Satoshi&LabBancoDeDadosII+B&G&Satoshi&LabBancoDeDadosII+B&O&Satoshi&LabBancoDeDadosII+B&M&Satoshi&LabBancoDeDadosII+B&H&Satoshi&LabBancoDeDadosII+B&I&Satoshi&LabBancoDeDadosII+B&N&Satoshi&BancoDeDadosII+B&G&Satoshi&BancoDeDadosII+B&O&Satoshi&BancoDeDadosII+B&M&Satoshi&BancoDeDadosII+B&H&Satoshi&BancoDeDadosII+B&I&Satoshi&BancoDeDadosII+B&N&Italo&LPII+B&L&Italo&LPII+B&B&Italo&LPII+B&F&Italo&LPII+B&O&Italo&LPII+B&E&Italo&LPII+B&K&Italo&LPII+B&C&Italo&LPII+B&L&Milton&LabRedesII+B&F&Milton&LabRedesII+B&D&Milton&LabRedesII+B&J&Milton&LabRedesII+B&O&Milton&LabRedesII+B&E&Milton&LabRedesII+B&K&Milton&LabRedesII+B&I&Milton&LabRedesII+B&C&Milton&LabRedesII+B&L&Milton&RedesII+B&F&Milton&RedesII+B&D&Milton&RedesII+B&J&Milton&RedesII+B&O&Milton&RedesII+B&E&Milton&RedesII+B&K&Milton&RedesII+B&I&Milton&RedesII+B&C&Milton&RedesII
 ST
-A&b&NomeProfessor&NomeMateriaB+A&b&NomeProfessora&NomeMateriaA<1
-A&a&NomeProfessor&NomeMateriaB+A&a&NomeProfessora&NomeMateriaA<1
-A&b&NomeProfessora&NomeMateriaA+A&a&NomeProfessora&NomeMateriaA<1
-A&b&NomeProfessor&NomeMateriaB+A&a&NomeProfessor&NomeMateriaB<1
-A&b&NomeProfessor&NomeMateriaB<1
-A&a&NomeProfessor&NomeMateriaB<1
-A&b&NomeProfessora&NomeMateriaA<1
-A&a&NomeProfessora&NomeMateriaA<1
+DA&N&marye&LabBancoDeDadosIIAB+DA&N&marye&BancoDeDadosIIAB+DA&N&carla&GrafosAB+DA&N&ferrari&SistemasDistribuidosAB+DA&N&bicas&LPIIAB<1
+DA&L&vega&LabRedesIIAB+DA&L&vega&RedesIIAB+DA&L&felipe&LPIAB+DA&L&bicas&LPIIAB<1
+DA&G&marye&LabBancoDeDadosIIAB+DA&G&marye&BancoDeDadosIIAB+DA&G&carla&GrafosAB+DA&G&felipe&LPIAB+DA&G&ferrari&SistemasDistribuidosAB<1
+DA&B&carla&GrafosAB+DA&B&bicas&LPIIAB<1
+DA&D&carla&GrafosAB+DA&D&vega&LabRedesIIAB+DA&D&vega&RedesIIAB+DA&D&felipe&LPIAB+DA&D&ferrari&SistemasDistribuidosAB<1
+DA&J&carla&GrafosAB+DA&J&vega&LabRedesIIAB+DA&J&vega&RedesIIAB+DA&J&felipe&LPIAB<1
+DA&O&marye&LabBancoDeDadosIIAB+DA&O&marye&BancoDeDadosIIAB+DA&O&vega&LabRedesIIAB+DA&O&vega&RedesIIAB+DA&O&felipe&LPIAB+DA&O&ferrari&SistemasDistribuidosAB+DA&O&bicas&LPIIAB<1
+DA&M&marye&LabBancoDeDadosIIAB+DA&M&marye&BancoDeDadosIIAB+DA&M&carla&GrafosAB+DA&M&felipe&LPIAB<1
+DA&K&carla&GrafosAB+DA&K&vega&LabRedesIIAB+DA&K&vega&RedesIIAB+DA&K&bicas&LPIIAB<1
+DA&F&vega&LabRedesIIAB+DA&F&vega&RedesIIAB+DA&F&felipe&LPIAB+DA&F&bicas&LPIIAB<1
+DA&H&marye&LabBancoDeDadosIIAB+DA&H&marye&BancoDeDadosIIAB+DA&H&carla&GrafosAB+DA&H&ferrari&SistemasDistribuidosAB<1
+DA&E&carla&GrafosAB+DA&E&vega&LabRedesIIAB+DA&E&vega&RedesIIAB+DA&E&bicas&LPIIAB<1
+DA&I&marye&LabBancoDeDadosIIAB+DA&I&marye&BancoDeDadosIIAB+DA&I&vega&LabRedesIIAB+DA&I&vega&RedesIIAB+DA&I&felipe&LPIAB<1
+DA&A&carla&GrafosAB+DA&A&felipe&LPIAB+DA&A&ferrari&SistemasDistribuidosAB<1
+DA&C&vega&LabRedesIIAB+DA&C&vega&RedesIIAB+DA&C&felipe&LPIAB+DA&C&ferrari&SistemasDistribuidosAB+DA&C&bicas&LPIIAB<1
+A&N&Wladmir&EST+A&N&Lisbete&EstruturaDeDados+A&N&Lisbete&Algoritmos+A&N&Satoshi&BancoDeDados+A&N&Italo&EngenhariaDeSoftware+A&N&Italo&OrientacaoObjetos<1
+A&L&Carlos&ESP+A&L&Italo&EngenhariaDeSoftware+A&L&Italo&OrientacaoObjetos+A&L&Milton&LabRedes+A&L&Milton&Redes<1
+A&G&Wladmir&EST+A&G&Lisbete&EstruturaDeDados+A&G&Lisbete&Algoritmos+A&G&Carlos&ESP+A&G&Satoshi&BancoDeDados<1
+A&B&Lisbete&EstruturaDeDados+A&B&Lisbete&Algoritmos+A&B&Italo&EngenhariaDeSoftware+A&B&Italo&OrientacaoObjetos<1
+A&D&Wladmir&EST+A&D&Lisbete&EstruturaDeDados+A&D&Lisbete&Algoritmos+A&D&Carlos&ESP+A&D&Milton&LabRedes+A&D&Milton&Redes<1
+A&J&Lisbete&EstruturaDeDados+A&J&Lisbete&Algoritmos+A&J&Carlos&ESP+A&J&Milton&LabRedes+A&J&Milton&Redes<1
+A&O&Wladmir&EST+A&O&Carlos&ESP+A&O&Satoshi&BancoDeDados+A&O&Italo&EngenhariaDeSoftware+A&O&Italo&OrientacaoObjetos+A&O&Milton&LabRedes+A&O&Milton&Redes<1
+A&M&Lisbete&EstruturaDeDados+A&M&Lisbete&Algoritmos+A&M&Carlos&ESP+A&M&Satoshi&BancoDeDados<1
+A&K&Lisbete&EstruturaDeDados+A&K&Lisbete&Algoritmos+A&K&Italo&EngenhariaDeSoftware+A&K&Italo&OrientacaoObjetos+A&K&Milton&LabRedes+A&K&Milton&Redes<1
+A&F&Carlos&ESP+A&F&Italo&EngenhariaDeSoftware+A&F&Italo&OrientacaoObjetos+A&F&Milton&LabRedes+A&F&Milton&Redes<1
+A&H&Wladmir&EST+A&H&Lisbete&EstruturaDeDados+A&H&Lisbete&Algoritmos+A&H&Satoshi&BancoDeDados<1
+A&E&Lisbete&EstruturaDeDados+A&E&Lisbete&Algoritmos+A&E&Italo&EngenhariaDeSoftware+A&E&Italo&OrientacaoObjetos+A&E&Milton&LabRedes+A&E&Milton&Redes<1
+A&I&Carlos&ESP+A&I&Satoshi&BancoDeDados+A&I&Milton&LabRedes+A&I&Milton&Redes<1
+A&A&Wladmir&EST+A&A&Lisbete&EstruturaDeDados+A&A&Lisbete&Algoritmos+A&A&Carlos&ESP<1
+A&C&Wladmir&EST+A&C&Carlos&ESP+A&C&Italo&EngenhariaDeSoftware+A&C&Italo&OrientacaoObjetos+A&C&Milton&LabRedes+A&C&Milton&Redes<1
+C&N&marye&BancoDeDadosAB+C&N&carla&EstruturaDeDadosII+C&N&carla&AlgoritmosII+C&N&ferrari&EST+C&N&bicas&EngenhariaDeSoftwareII+C&N&bicas&OrientacaoObjetosII<1
+C&L&vega&RedesAB+C&L&vega&LabRedesAB+C&L&felipe&ESP+C&L&bicas&EngenhariaDeSoftwareII+C&L&bicas&OrientacaoObjetosII<1
+C&G&marye&BancoDeDadosAB+C&G&carla&EstruturaDeDadosII+C&G&carla&AlgoritmosII+C&G&felipe&ESP+C&G&ferrari&EST<1
+C&B&carla&EstruturaDeDadosII+C&B&carla&AlgoritmosII+C&B&bicas&EngenhariaDeSoftwareII+C&B&bicas&OrientacaoObjetosII<1
+C&D&carla&EstruturaDeDadosII+C&D&carla&AlgoritmosII+C&D&vega&RedesAB+C&D&vega&LabRedesAB+C&D&felipe&ESP+C&D&ferrari&EST<1
+C&J&carla&EstruturaDeDadosII+C&J&carla&AlgoritmosII+C&J&vega&RedesAB+C&J&vega&LabRedesAB+C&J&felipe&ESP<1
+C&O&marye&BancoDeDadosAB+C&O&vega&RedesAB+C&O&vega&LabRedesAB+C&O&felipe&ESP+C&O&ferrari&EST+C&O&bicas&EngenhariaDeSoftwareII+C&O&bicas&OrientacaoObjetosII<1
+C&M&marye&BancoDeDadosAB+C&M&carla&EstruturaDeDadosII+C&M&carla&AlgoritmosII+C&M&felipe&ESP<1
+C&K&carla&EstruturaDeDadosII+C&K&carla&AlgoritmosII+C&K&vega&RedesAB+C&K&vega&LabRedesAB+C&K&bicas&EngenhariaDeSoftwareII+C&K&bicas&OrientacaoObjetosII<1
+C&F&vega&RedesAB+C&F&vega&LabRedesAB+C&F&felipe&ESP+C&F&bicas&EngenhariaDeSoftwareII+C&F&bicas&OrientacaoObjetosII<1
+C&H&marye&BancoDeDadosAB+C&H&carla&EstruturaDeDadosII+C&H&carla&AlgoritmosII+C&H&ferrari&EST<1
+C&E&carla&EstruturaDeDadosII+C&E&carla&AlgoritmosII+C&E&vega&RedesAB+C&E&vega&LabRedesAB+C&E&bicas&EngenhariaDeSoftwareII+C&E&bicas&OrientacaoObjetosII<1
+C&I&marye&BancoDeDadosAB+C&I&vega&RedesAB+C&I&vega&LabRedesAB+C&I&felipe&ESP<1
+C&A&carla&EstruturaDeDadosII+C&A&carla&AlgoritmosII+C&A&felipe&ESP+C&A&ferrari&EST<1
+C&C&vega&RedesAB+C&C&vega&LabRedesAB+C&C&felipe&ESP+C&C&ferrari&EST+C&C&bicas&EngenhariaDeSoftwareII+C&C&bicas&OrientacaoObjetosII<1
+B&N&Wladmir&SistemasDistribuidos+B&N&Lisbete&Grafos+B&N&Satoshi&LabBancoDeDadosII+B&N&Satoshi&BancoDeDadosII+B&N&Italo&LPII<1
+B&L&Carlos&LPI+B&L&Italo&LPII+B&L&Milton&LabRedesII+B&L&Milton&RedesII<1
+B&G&Wladmir&SistemasDistribuidos+B&G&Lisbete&Grafos+B&G&Carlos&LPI+B&G&Satoshi&LabBancoDeDadosII+B&G&Satoshi&BancoDeDadosII<1
+B&B&Lisbete&Grafos+B&B&Italo&LPII<1
+B&D&Wladmir&SistemasDistribuidos+B&D&Lisbete&Grafos+B&D&Carlos&LPI+B&D&Milton&LabRedesII+B&D&Milton&RedesII<1
+B&J&Lisbete&Grafos+B&J&Carlos&LPI+B&J&Milton&LabRedesII+B&J&Milton&RedesII<1
+B&O&Wladmir&SistemasDistribuidos+B&O&Carlos&LPI+B&O&Satoshi&LabBancoDeDadosII+B&O&Satoshi&BancoDeDadosII+B&O&Italo&LPII+B&O&Milton&LabRedesII+B&O&Milton&RedesII<1
+B&M&Lisbete&Grafos+B&M&Carlos&LPI+B&M&Satoshi&LabBancoDeDadosII+B&M&Satoshi&BancoDeDadosII<1
+B&K&Lisbete&Grafos+B&K&Italo&LPII+B&K&Milton&LabRedesII+B&K&Milton&RedesII<1
+B&F&Carlos&LPI+B&F&Italo&LPII+B&F&Milton&LabRedesII+B&F&Milton&RedesII<1
+B&H&Wladmir&SistemasDistribuidos+B&H&Lisbete&Grafos+B&H&Satoshi&LabBancoDeDadosII+B&H&Satoshi&BancoDeDadosII<1
+B&E&Lisbete&Grafos+B&E&Italo&LPII+B&E&Milton&LabRedesII+B&E&Milton&RedesII<1
+B&I&Carlos&LPI+B&I&Satoshi&LabBancoDeDadosII+B&I&Satoshi&BancoDeDadosII+B&I&Milton&LabRedesII+B&I&Milton&RedesII<1
+B&A&Wladmir&SistemasDistribuidos+B&A&Lisbete&Grafos+B&A&Carlos&LPI<1
+B&C&Wladmir&SistemasDistribuidos+B&C&Carlos&LPI+B&C&Italo&LPII+B&C&Milton&LabRedesII+B&C&Milton&RedesII<1
+DA&N&marye&LabBancoDeDadosIIAB+DA&G&marye&LabBancoDeDadosIIAB+DA&O&marye&LabBancoDeDadosIIAB+DA&M&marye&LabBancoDeDadosIIAB+DA&H&marye&LabBancoDeDadosIIAB+DA&I&marye&LabBancoDeDadosIIAB=2
+DA&N&ferrari&SistemasDistribuidosAB+DA&G&ferrari&SistemasDistribuidosAB+DA&D&ferrari&SistemasDistribuidosAB+DA&O&ferrari&SistemasDistribuidosAB+DA&H&ferrari&SistemasDistribuidosAB+DA&A&ferrari&SistemasDistribuidosAB+DA&C&ferrari&SistemasDistribuidosAB=2
+DA&N&carla&GrafosAB+DA&G&carla&GrafosAB+DA&B&carla&GrafosAB+DA&D&carla&GrafosAB+DA&J&carla&GrafosAB+DA&M&carla&GrafosAB+DA&H&carla&GrafosAB+DA&E&carla&GrafosAB+DA&K&carla&GrafosAB+DA&A&carla&GrafosAB=2
+DA&L&vega&RedesIIAB+DA&F&vega&RedesIIAB+DA&D&vega&RedesIIAB+DA&J&vega&RedesIIAB+DA&O&vega&RedesIIAB+DA&E&vega&RedesIIAB+DA&K&vega&RedesIIAB+DA&I&vega&RedesIIAB+DA&C&vega&RedesIIAB=1
+DA&N&bicas&LPIIAB+DA&L&bicas&LPIIAB+DA&B&bicas&LPIIAB+DA&F&bicas&LPIIAB+DA&O&bicas&LPIIAB+DA&E&bicas&LPIIAB+DA&K&bicas&LPIIAB+DA&C&bicas&LPIIAB=2
+DA&L&felipe&LPIAB+DA&G&felipe&LPIAB+DA&F&felipe&LPIAB+DA&D&felipe&LPIAB+DA&J&felipe&LPIAB+DA&O&felipe&LPIAB+DA&M&felipe&LPIAB+DA&I&felipe&LPIAB+DA&A&felipe&LPIAB+DA&C&felipe&LPIAB=2
+DA&L&vega&LabRedesIIAB+DA&F&vega&LabRedesIIAB+DA&D&vega&LabRedesIIAB+DA&J&vega&LabRedesIIAB+DA&O&vega&LabRedesIIAB+DA&E&vega&LabRedesIIAB+DA&K&vega&LabRedesIIAB+DA&I&vega&LabRedesIIAB+DA&C&vega&LabRedesIIAB=2
+DA&N&marye&BancoDeDadosIIAB+DA&G&marye&BancoDeDadosIIAB+DA&O&marye&BancoDeDadosIIAB+DA&M&marye&BancoDeDadosIIAB+DA&H&marye&BancoDeDadosIIAB+DA&I&marye&BancoDeDadosIIAB=2
+A&N&Satoshi&BancoDeDados+A&G&Satoshi&BancoDeDados+A&O&Satoshi&BancoDeDados+A&M&Satoshi&BancoDeDados+A&H&Satoshi&BancoDeDados+A&I&Satoshi&BancoDeDados=2
+A&N&Italo&EngenhariaDeSoftware+A&L&Italo&EngenhariaDeSoftware+A&B&Italo&EngenhariaDeSoftware+A&F&Italo&EngenhariaDeSoftware+A&O&Italo&EngenhariaDeSoftware+A&E&Italo&EngenhariaDeSoftware+A&K&Italo&EngenhariaDeSoftware+A&C&Italo&EngenhariaDeSoftware=2
+A&L&Milton&LabRedes+A&F&Milton&LabRedes+A&D&Milton&LabRedes+A&J&Milton&LabRedes+A&O&Milton&LabRedes+A&E&Milton&LabRedes+A&K&Milton&LabRedes+A&I&Milton&LabRedes+A&C&Milton&LabRedes=2
+A&N&Italo&OrientacaoObjetos+A&L&Italo&OrientacaoObjetos+A&B&Italo&OrientacaoObjetos+A&F&Italo&OrientacaoObjetos+A&O&Italo&OrientacaoObjetos+A&E&Italo&OrientacaoObjetos+A&K&Italo&OrientacaoObjetos+A&C&Italo&OrientacaoObjetos=1
+A&L&Carlos&ESP+A&G&Carlos&ESP+A&F&Carlos&ESP+A&D&Carlos&ESP+A&J&Carlos&ESP+A&O&Carlos&ESP+A&M&Carlos&ESP+A&I&Carlos&ESP+A&A&Carlos&ESP+A&C&Carlos&ESP=1
+A&N&Lisbete&Algoritmos+A&G&Lisbete&Algoritmos+A&B&Lisbete&Algoritmos+A&D&Lisbete&Algoritmos+A&J&Lisbete&Algoritmos+A&M&Lisbete&Algoritmos+A&H&Lisbete&Algoritmos+A&E&Lisbete&Algoritmos+A&K&Lisbete&Algoritmos+A&A&Lisbete&Algoritmos=2
+A&L&Milton&Redes+A&F&Milton&Redes+A&D&Milton&Redes+A&J&Milton&Redes+A&O&Milton&Redes+A&E&Milton&Redes+A&K&Milton&Redes+A&I&Milton&Redes+A&C&Milton&Redes=1
+A&N&Lisbete&EstruturaDeDados+A&G&Lisbete&EstruturaDeDados+A&B&Lisbete&EstruturaDeDados+A&D&Lisbete&EstruturaDeDados+A&J&Lisbete&EstruturaDeDados+A&M&Lisbete&EstruturaDeDados+A&H&Lisbete&EstruturaDeDados+A&E&Lisbete&EstruturaDeDados+A&K&Lisbete&EstruturaDeDados+A&A&Lisbete&EstruturaDeDados=2
+A&N&Wladmir&EST+A&G&Wladmir&EST+A&D&Wladmir&EST+A&O&Wladmir&EST+A&H&Wladmir&EST+A&A&Wladmir&EST+A&C&Wladmir&EST=2
+C&L&vega&RedesAB+C&F&vega&RedesAB+C&D&vega&RedesAB+C&J&vega&RedesAB+C&O&vega&RedesAB+C&E&vega&RedesAB+C&K&vega&RedesAB+C&I&vega&RedesAB+C&C&vega&RedesAB=1
+C&N&bicas&EngenhariaDeSoftwareII+C&L&bicas&EngenhariaDeSoftwareII+C&B&bicas&EngenhariaDeSoftwareII+C&F&bicas&EngenhariaDeSoftwareII+C&O&bicas&EngenhariaDeSoftwareII+C&E&bicas&EngenhariaDeSoftwareII+C&K&bicas&EngenhariaDeSoftwareII+C&C&bicas&EngenhariaDeSoftwareII=2
+C&N&carla&EstruturaDeDadosII+C&G&carla&EstruturaDeDadosII+C&B&carla&EstruturaDeDadosII+C&D&carla&EstruturaDeDadosII+C&J&carla&EstruturaDeDadosII+C&M&carla&EstruturaDeDadosII+C&H&carla&EstruturaDeDadosII+C&E&carla&EstruturaDeDadosII+C&K&carla&EstruturaDeDadosII+C&A&carla&EstruturaDeDadosII=2
+C&N&ferrari&EST+C&G&ferrari&EST+C&D&ferrari&EST+C&O&ferrari&EST+C&H&ferrari&EST+C&A&ferrari&EST+C&C&ferrari&EST=2
+C&L&vega&LabRedesAB+C&F&vega&LabRedesAB+C&D&vega&LabRedesAB+C&J&vega&LabRedesAB+C&O&vega&LabRedesAB+C&E&vega&LabRedesAB+C&K&vega&LabRedesAB+C&I&vega&LabRedesAB+C&C&vega&LabRedesAB=2
+C&N&carla&AlgoritmosII+C&G&carla&AlgoritmosII+C&B&carla&AlgoritmosII+C&D&carla&AlgoritmosII+C&J&carla&AlgoritmosII+C&M&carla&AlgoritmosII+C&H&carla&AlgoritmosII+C&E&carla&AlgoritmosII+C&K&carla&AlgoritmosII+C&A&carla&AlgoritmosII=2
+C&N&bicas&OrientacaoObjetosII+C&L&bicas&OrientacaoObjetosII+C&B&bicas&OrientacaoObjetosII+C&F&bicas&OrientacaoObjetosII+C&O&bicas&OrientacaoObjetosII+C&E&bicas&OrientacaoObjetosII+C&K&bicas&OrientacaoObjetosII+C&C&bicas&OrientacaoObjetosII=1
+C&L&felipe&ESP+C&G&felipe&ESP+C&F&felipe&ESP+C&D&felipe&ESP+C&J&felipe&ESP+C&O&felipe&ESP+C&M&felipe&ESP+C&I&felipe&ESP+C&A&felipe&ESP+C&C&felipe&ESP=1
+C&N&marye&BancoDeDadosAB+C&G&marye&BancoDeDadosAB+C&O&marye&BancoDeDadosAB+C&M&marye&BancoDeDadosAB+C&H&marye&BancoDeDadosAB+C&I&marye&BancoDeDadosAB=2
+B&N&Wladmir&SistemasDistribuidos+B&G&Wladmir&SistemasDistribuidos+B&D&Wladmir&SistemasDistribuidos+B&O&Wladmir&SistemasDistribuidos+B&H&Wladmir&SistemasDistribuidos+B&A&Wladmir&SistemasDistribuidos+B&C&Wladmir&SistemasDistribuidos=2
+B&N&Satoshi&BancoDeDadosII+B&G&Satoshi&BancoDeDadosII+B&O&Satoshi&BancoDeDadosII+B&M&Satoshi&BancoDeDadosII+B&H&Satoshi&BancoDeDadosII+B&I&Satoshi&BancoDeDadosII=2
+B&N&Satoshi&LabBancoDeDadosII+B&G&Satoshi&LabBancoDeDadosII+B&O&Satoshi&LabBancoDeDadosII+B&M&Satoshi&LabBancoDeDadosII+B&H&Satoshi&LabBancoDeDadosII+B&I&Satoshi&LabBancoDeDadosII=2
+B&N&Lisbete&Grafos+B&G&Lisbete&Grafos+B&B&Lisbete&Grafos+B&D&Lisbete&Grafos+B&J&Lisbete&Grafos+B&M&Lisbete&Grafos+B&H&Lisbete&Grafos+B&E&Lisbete&Grafos+B&K&Lisbete&Grafos+B&A&Lisbete&Grafos=2
+B&L&Milton&RedesII+B&F&Milton&RedesII+B&D&Milton&RedesII+B&J&Milton&RedesII+B&O&Milton&RedesII+B&E&Milton&RedesII+B&K&Milton&RedesII+B&I&Milton&RedesII+B&C&Milton&RedesII=1
+B&L&Carlos&LPI+B&G&Carlos&LPI+B&F&Carlos&LPI+B&D&Carlos&LPI+B&J&Carlos&LPI+B&O&Carlos&LPI+B&M&Carlos&LPI+B&I&Carlos&LPI+B&A&Carlos&LPI+B&C&Carlos&LPI=2
+B&N&Italo&LPII+B&L&Italo&LPII+B&B&Italo&LPII+B&F&Italo&LPII+B&O&Italo&LPII+B&E&Italo&LPII+B&K&Italo&LPII+B&C&Italo&LPII=2
+B&L&Milton&LabRedesII+B&F&Milton&LabRedesII+B&D&Milton&LabRedesII+B&J&Milton&LabRedesII+B&O&Milton&LabRedesII+B&E&Milton&LabRedesII+B&K&Milton&LabRedesII+B&I&Milton&LabRedesII+B&C&Milton&LabRedesII=2
+A&N&Wladmir&EST+B&N&Wladmir&SistemasDistribuidos<1
+A&G&Wladmir&EST+B&G&Wladmir&SistemasDistribuidos<1
+A&D&Wladmir&EST+B&D&Wladmir&SistemasDistribuidos<1
+A&O&Wladmir&EST+B&O&Wladmir&SistemasDistribuidos<1
+A&H&Wladmir&EST+B&H&Wladmir&SistemasDistribuidos<1
+A&A&Wladmir&EST+B&A&Wladmir&SistemasDistribuidos<1
+A&C&Wladmir&EST+B&C&Wladmir&SistemasDistribuidos<1
+A&N&Lisbete&EstruturaDeDados+A&N&Lisbete&Algoritmos+B&N&Lisbete&Grafos<1
+A&G&Lisbete&EstruturaDeDados+A&G&Lisbete&Algoritmos+B&G&Lisbete&Grafos<1
+A&B&Lisbete&EstruturaDeDados+A&B&Lisbete&Algoritmos+B&B&Lisbete&Grafos<1
+A&D&Lisbete&EstruturaDeDados+A&D&Lisbete&Algoritmos+B&D&Lisbete&Grafos<1
+A&J&Lisbete&EstruturaDeDados+A&J&Lisbete&Algoritmos+B&J&Lisbete&Grafos<1
+A&M&Lisbete&EstruturaDeDados+A&M&Lisbete&Algoritmos+B&M&Lisbete&Grafos<1
+A&K&Lisbete&EstruturaDeDados+A&K&Lisbete&Algoritmos+B&K&Lisbete&Grafos<1
+A&H&Lisbete&EstruturaDeDados+A&H&Lisbete&Algoritmos+B&H&Lisbete&Grafos<1
+A&E&Lisbete&EstruturaDeDados+A&E&Lisbete&Algoritmos+B&E&Lisbete&Grafos<1
+A&A&Lisbete&EstruturaDeDados+A&A&Lisbete&Algoritmos+B&A&Lisbete&Grafos<1
+DA&N&marye&LabBancoDeDadosIIAB+DA&N&marye&BancoDeDadosIIAB+C&N&marye&BancoDeDadosAB<1
+DA&G&marye&LabBancoDeDadosIIAB+DA&G&marye&BancoDeDadosIIAB+C&G&marye&BancoDeDadosAB<1
+DA&O&marye&LabBancoDeDadosIIAB+DA&O&marye&BancoDeDadosIIAB+C&O&marye&BancoDeDadosAB<1
+DA&M&marye&LabBancoDeDadosIIAB+DA&M&marye&BancoDeDadosIIAB+C&M&marye&BancoDeDadosAB<1
+DA&H&marye&LabBancoDeDadosIIAB+DA&H&marye&BancoDeDadosIIAB+C&H&marye&BancoDeDadosAB<1
+DA&I&marye&LabBancoDeDadosIIAB+DA&I&marye&BancoDeDadosIIAB+C&I&marye&BancoDeDadosAB<1
+DA&N&carla&GrafosAB+C&N&carla&EstruturaDeDadosII+C&N&carla&AlgoritmosII<1
+DA&G&carla&GrafosAB+C&G&carla&EstruturaDeDadosII+C&G&carla&AlgoritmosII<1
+DA&B&carla&GrafosAB+C&B&carla&EstruturaDeDadosII+C&B&carla&AlgoritmosII<1
+DA&D&carla&GrafosAB+C&D&carla&EstruturaDeDadosII+C&D&carla&AlgoritmosII<1
+DA&J&carla&GrafosAB+C&J&carla&EstruturaDeDadosII+C&J&carla&AlgoritmosII<1
+DA&M&carla&GrafosAB+C&M&carla&EstruturaDeDadosII+C&M&carla&AlgoritmosII<1
+DA&K&carla&GrafosAB+C&K&carla&EstruturaDeDadosII+C&K&carla&AlgoritmosII<1
+DA&H&carla&GrafosAB+C&H&carla&EstruturaDeDadosII+C&H&carla&AlgoritmosII<1
+DA&E&carla&GrafosAB+C&E&carla&EstruturaDeDadosII+C&E&carla&AlgoritmosII<1
+DA&A&carla&GrafosAB+C&A&carla&EstruturaDeDadosII+C&A&carla&AlgoritmosII<1
+A&L&Carlos&ESP+B&L&Carlos&LPI<1
+A&G&Carlos&ESP+B&G&Carlos&LPI<1
+A&D&Carlos&ESP+B&D&Carlos&LPI<1
+A&J&Carlos&ESP+B&J&Carlos&LPI<1
+A&O&Carlos&ESP+B&O&Carlos&LPI<1
+A&M&Carlos&ESP+B&M&Carlos&LPI<1
+A&F&Carlos&ESP+B&F&Carlos&LPI<1
+A&I&Carlos&ESP+B&I&Carlos&LPI<1
+A&A&Carlos&ESP+B&A&Carlos&LPI<1
+A&C&Carlos&ESP+B&C&Carlos&LPI<1
+A&N&Satoshi&BancoDeDados+B&N&Satoshi&LabBancoDeDadosII+B&N&Satoshi&BancoDeDadosII<1
+A&G&Satoshi&BancoDeDados+B&G&Satoshi&LabBancoDeDadosII+B&G&Satoshi&BancoDeDadosII<1
+A&O&Satoshi&BancoDeDados+B&O&Satoshi&LabBancoDeDadosII+B&O&Satoshi&BancoDeDadosII<1
+A&M&Satoshi&BancoDeDados+B&M&Satoshi&LabBancoDeDadosII+B&M&Satoshi&BancoDeDadosII<1
+A&H&Satoshi&BancoDeDados+B&H&Satoshi&LabBancoDeDadosII+B&H&Satoshi&BancoDeDadosII<1
+A&I&Satoshi&BancoDeDados+B&I&Satoshi&LabBancoDeDadosII+B&I&Satoshi&BancoDeDadosII<1
+A&N&Italo&EngenhariaDeSoftware+A&N&Italo&OrientacaoObjetos+B&N&Italo&LPII<1
+A&L&Italo&EngenhariaDeSoftware+A&L&Italo&OrientacaoObjetos+B&L&Italo&LPII<1
+A&B&Italo&EngenhariaDeSoftware+A&B&Italo&OrientacaoObjetos+B&B&Italo&LPII<1
+A&O&Italo&EngenhariaDeSoftware+A&O&Italo&OrientacaoObjetos+B&O&Italo&LPII<1
+A&K&Italo&EngenhariaDeSoftware+A&K&Italo&OrientacaoObjetos+B&K&Italo&LPII<1
+A&F&Italo&EngenhariaDeSoftware+A&F&Italo&OrientacaoObjetos+B&F&Italo&LPII<1
+A&E&Italo&EngenhariaDeSoftware+A&E&Italo&OrientacaoObjetos+B&E&Italo&LPII<1
+A&C&Italo&EngenhariaDeSoftware+A&C&Italo&OrientacaoObjetos+B&C&Italo&LPII<1
+DA&L&vega&LabRedesIIAB+DA&L&vega&RedesIIAB+C&L&vega&RedesAB+C&L&vega&LabRedesAB<1
+DA&D&vega&LabRedesIIAB+DA&D&vega&RedesIIAB+C&D&vega&RedesAB+C&D&vega&LabRedesAB<1
+DA&J&vega&LabRedesIIAB+DA&J&vega&RedesIIAB+C&J&vega&RedesAB+C&J&vega&LabRedesAB<1
+DA&O&vega&LabRedesIIAB+DA&O&vega&RedesIIAB+C&O&vega&RedesAB+C&O&vega&LabRedesAB<1
+DA&K&vega&LabRedesIIAB+DA&K&vega&RedesIIAB+C&K&vega&RedesAB+C&K&vega&LabRedesAB<1
+DA&F&vega&LabRedesIIAB+DA&F&vega&RedesIIAB+C&F&vega&RedesAB+C&F&vega&LabRedesAB<1
+DA&E&vega&LabRedesIIAB+DA&E&vega&RedesIIAB+C&E&vega&RedesAB+C&E&vega&LabRedesAB<1
+DA&I&vega&LabRedesIIAB+DA&I&vega&RedesIIAB+C&I&vega&RedesAB+C&I&vega&LabRedesAB<1
+DA&C&vega&LabRedesIIAB+DA&C&vega&RedesIIAB+C&C&vega&RedesAB+C&C&vega&LabRedesAB<1
+DA&L&felipe&LPIAB+C&L&felipe&ESP<1
+DA&G&felipe&LPIAB+C&G&felipe&ESP<1
+DA&D&felipe&LPIAB+C&D&felipe&ESP<1
+DA&J&felipe&LPIAB+C&J&felipe&ESP<1
+DA&O&felipe&LPIAB+C&O&felipe&ESP<1
+DA&M&felipe&LPIAB+C&M&felipe&ESP<1
+DA&F&felipe&LPIAB+C&F&felipe&ESP<1
+DA&I&felipe&LPIAB+C&I&felipe&ESP<1
+DA&A&felipe&LPIAB+C&A&felipe&ESP<1
+DA&C&felipe&LPIAB+C&C&felipe&ESP<1
+A&L&Milton&LabRedes+A&L&Milton&Redes+B&L&Milton&LabRedesII+B&L&Milton&RedesII<1
+A&D&Milton&LabRedes+A&D&Milton&Redes+B&D&Milton&LabRedesII+B&D&Milton&RedesII<1
+A&J&Milton&LabRedes+A&J&Milton&Redes+B&J&Milton&LabRedesII+B&J&Milton&RedesII<1
+A&O&Milton&LabRedes+A&O&Milton&Redes+B&O&Milton&LabRedesII+B&O&Milton&RedesII<1
+A&K&Milton&LabRedes+A&K&Milton&Redes+B&K&Milton&LabRedesII+B&K&Milton&RedesII<1
+A&F&Milton&LabRedes+A&F&Milton&Redes+B&F&Milton&LabRedesII+B&F&Milton&RedesII<1
+A&E&Milton&LabRedes+A&E&Milton&Redes+B&E&Milton&LabRedesII+B&E&Milton&RedesII<1
+A&I&Milton&LabRedes+A&I&Milton&Redes+B&I&Milton&LabRedesII+B&I&Milton&RedesII<1
+A&C&Milton&LabRedes+A&C&Milton&Redes+B&C&Milton&LabRedesII+B&C&Milton&RedesII<1
+DA&N&ferrari&SistemasDistribuidosAB+C&N&ferrari&EST<1
+DA&G&ferrari&SistemasDistribuidosAB+C&G&ferrari&EST<1
+DA&D&ferrari&SistemasDistribuidosAB+C&D&ferrari&EST<1
+DA&O&ferrari&SistemasDistribuidosAB+C&O&ferrari&EST<1
+DA&H&ferrari&SistemasDistribuidosAB+C&H&ferrari&EST<1
+DA&A&ferrari&SistemasDistribuidosAB+C&A&ferrari&EST<1
+DA&C&ferrari&SistemasDistribuidosAB+C&C&ferrari&EST<1
+DA&N&bicas&LPIIAB+C&N&bicas&EngenhariaDeSoftwareII+C&N&bicas&OrientacaoObjetosII<1
+DA&L&bicas&LPIIAB+C&L&bicas&EngenhariaDeSoftwareII+C&L&bicas&OrientacaoObjetosII<1
+DA&B&bicas&LPIIAB+C&B&bicas&EngenhariaDeSoftwareII+C&B&bicas&OrientacaoObjetosII<1
+DA&O&bicas&LPIIAB+C&O&bicas&EngenhariaDeSoftwareII+C&O&bicas&OrientacaoObjetosII<1
+DA&K&bicas&LPIIAB+C&K&bicas&EngenhariaDeSoftwareII+C&K&bicas&OrientacaoObjetosII<1
+DA&F&bicas&LPIIAB+C&F&bicas&EngenhariaDeSoftwareII+C&F&bicas&OrientacaoObjetosII<1
+DA&E&bicas&LPIIAB+C&E&bicas&EngenhariaDeSoftwareII+C&E&bicas&OrientacaoObjetosII<1
+DA&C&bicas&LPIIAB+C&C&bicas&EngenhariaDeSoftwareII+C&C&bicas&OrientacaoObjetosII<1
 END
-GIN A&b&NomeProfessor&NomeMateriaB
-GIN A&a&NomeProfessor&NomeMateriaB
-GIN A&b&NomeProfessora&NomeMateriaA
-GIN A&a&NomeProfessora&NomeMateriaA
+GIN DA&N&marye&LabBancoDeDadosIIAB
+GIN DA&G&marye&LabBancoDeDadosIIAB
+GIN DA&O&marye&LabBancoDeDadosIIAB
+GIN DA&M&marye&LabBancoDeDadosIIAB
+GIN DA&H&marye&LabBancoDeDadosIIAB
+GIN DA&I&marye&LabBancoDeDadosIIAB
+GIN DA&N&marye&BancoDeDadosIIAB
+GIN DA&G&marye&BancoDeDadosIIAB
+GIN DA&O&marye&BancoDeDadosIIAB
+GIN DA&M&marye&BancoDeDadosIIAB
+GIN DA&H&marye&BancoDeDadosIIAB
+GIN DA&I&marye&BancoDeDadosIIAB
+GIN DA&N&carla&GrafosAB
+GIN DA&G&carla&GrafosAB
+GIN DA&B&carla&GrafosAB
+GIN DA&D&carla&GrafosAB
+GIN DA&J&carla&GrafosAB
+GIN DA&M&carla&GrafosAB
+GIN DA&H&carla&GrafosAB
+GIN DA&E&carla&GrafosAB
+GIN DA&K&carla&GrafosAB
+GIN DA&A&carla&GrafosAB
+GIN DA&L&vega&LabRedesIIAB
+GIN DA&F&vega&LabRedesIIAB
+GIN DA&D&vega&LabRedesIIAB
+GIN DA&J&vega&LabRedesIIAB
+GIN DA&O&vega&LabRedesIIAB
+GIN DA&E&vega&LabRedesIIAB
+GIN DA&K&vega&LabRedesIIAB
+GIN DA&I&vega&LabRedesIIAB
+GIN DA&C&vega&LabRedesIIAB
+GIN DA&L&vega&RedesIIAB
+GIN DA&F&vega&RedesIIAB
+GIN DA&D&vega&RedesIIAB
+GIN DA&J&vega&RedesIIAB
+GIN DA&O&vega&RedesIIAB
+GIN DA&E&vega&RedesIIAB
+GIN DA&K&vega&RedesIIAB
+GIN DA&I&vega&RedesIIAB
+GIN DA&C&vega&RedesIIAB
+GIN DA&L&felipe&LPIAB
+GIN DA&G&felipe&LPIAB
+GIN DA&F&felipe&LPIAB
+GIN DA&D&felipe&LPIAB
+GIN DA&J&felipe&LPIAB
+GIN DA&O&felipe&LPIAB
+GIN DA&M&felipe&LPIAB
+GIN DA&I&felipe&LPIAB
+GIN DA&A&felipe&LPIAB
+GIN DA&C&felipe&LPIAB
+GIN DA&N&ferrari&SistemasDistribuidosAB
+GIN DA&G&ferrari&SistemasDistribuidosAB
+GIN DA&D&ferrari&SistemasDistribuidosAB
+GIN DA&O&ferrari&SistemasDistribuidosAB
+GIN DA&H&ferrari&SistemasDistribuidosAB
+GIN DA&A&ferrari&SistemasDistribuidosAB
+GIN DA&C&ferrari&SistemasDistribuidosAB
+GIN DA&N&bicas&LPIIAB
+GIN DA&L&bicas&LPIIAB
+GIN DA&B&bicas&LPIIAB
+GIN DA&F&bicas&LPIIAB
+GIN DA&O&bicas&LPIIAB
+GIN DA&E&bicas&LPIIAB
+GIN DA&K&bicas&LPIIAB
+GIN DA&C&bicas&LPIIAB
+GIN A&N&Wladmir&EST
+GIN A&G&Wladmir&EST
+GIN A&D&Wladmir&EST
+GIN A&O&Wladmir&EST
+GIN A&H&Wladmir&EST
+GIN A&A&Wladmir&EST
+GIN A&C&Wladmir&EST
+GIN A&N&Lisbete&EstruturaDeDados
+GIN A&G&Lisbete&EstruturaDeDados
+GIN A&B&Lisbete&EstruturaDeDados
+GIN A&D&Lisbete&EstruturaDeDados
+GIN A&J&Lisbete&EstruturaDeDados
+GIN A&M&Lisbete&EstruturaDeDados
+GIN A&H&Lisbete&EstruturaDeDados
+GIN A&E&Lisbete&EstruturaDeDados
+GIN A&K&Lisbete&EstruturaDeDados
+GIN A&A&Lisbete&EstruturaDeDados
+GIN A&N&Lisbete&Algoritmos
+GIN A&G&Lisbete&Algoritmos
+GIN A&B&Lisbete&Algoritmos
+GIN A&D&Lisbete&Algoritmos
+GIN A&J&Lisbete&Algoritmos
+GIN A&M&Lisbete&Algoritmos
+GIN A&H&Lisbete&Algoritmos
+GIN A&E&Lisbete&Algoritmos
+GIN A&K&Lisbete&Algoritmos
+GIN A&A&Lisbete&Algoritmos
+GIN A&L&Carlos&ESP
+GIN A&G&Carlos&ESP
+GIN A&F&Carlos&ESP
+GIN A&D&Carlos&ESP
+GIN A&J&Carlos&ESP
+GIN A&O&Carlos&ESP
+GIN A&M&Carlos&ESP
+GIN A&I&Carlos&ESP
+GIN A&A&Carlos&ESP
+GIN A&C&Carlos&ESP
+GIN A&N&Satoshi&BancoDeDados
+GIN A&G&Satoshi&BancoDeDados
+GIN A&O&Satoshi&BancoDeDados
+GIN A&M&Satoshi&BancoDeDados
+GIN A&H&Satoshi&BancoDeDados
+GIN A&I&Satoshi&BancoDeDados
+GIN A&N&Italo&EngenhariaDeSoftware
+GIN A&L&Italo&EngenhariaDeSoftware
+GIN A&B&Italo&EngenhariaDeSoftware
+GIN A&F&Italo&EngenhariaDeSoftware
+GIN A&O&Italo&EngenhariaDeSoftware
+GIN A&E&Italo&EngenhariaDeSoftware
+GIN A&K&Italo&EngenhariaDeSoftware
+GIN A&C&Italo&EngenhariaDeSoftware
+GIN A&N&Italo&OrientacaoObjetos
+GIN A&L&Italo&OrientacaoObjetos
+GIN A&B&Italo&OrientacaoObjetos
+GIN A&F&Italo&OrientacaoObjetos
+GIN A&O&Italo&OrientacaoObjetos
+GIN A&E&Italo&OrientacaoObjetos
+GIN A&K&Italo&OrientacaoObjetos
+GIN A&C&Italo&OrientacaoObjetos
+GIN A&L&Milton&LabRedes
+GIN A&F&Milton&LabRedes
+GIN A&D&Milton&LabRedes
+GIN A&J&Milton&LabRedes
+GIN A&O&Milton&LabRedes
+GIN A&E&Milton&LabRedes
+GIN A&K&Milton&LabRedes
+GIN A&I&Milton&LabRedes
+GIN A&C&Milton&LabRedes
+GIN A&L&Milton&Redes
+GIN A&F&Milton&Redes
+GIN A&D&Milton&Redes
+GIN A&J&Milton&Redes
+GIN A&O&Milton&Redes
+GIN A&E&Milton&Redes
+GIN A&K&Milton&Redes
+GIN A&I&Milton&Redes
+GIN A&C&Milton&Redes
+GIN C&N&marye&BancoDeDadosAB
+GIN C&G&marye&BancoDeDadosAB
+GIN C&O&marye&BancoDeDadosAB
+GIN C&M&marye&BancoDeDadosAB
+GIN C&H&marye&BancoDeDadosAB
+GIN C&I&marye&BancoDeDadosAB
+GIN C&N&carla&EstruturaDeDadosII
+GIN C&G&carla&EstruturaDeDadosII
+GIN C&B&carla&EstruturaDeDadosII
+GIN C&D&carla&EstruturaDeDadosII
+GIN C&J&carla&EstruturaDeDadosII
+GIN C&M&carla&EstruturaDeDadosII
+GIN C&H&carla&EstruturaDeDadosII
+GIN C&E&carla&EstruturaDeDadosII
+GIN C&K&carla&EstruturaDeDadosII
+GIN C&A&carla&EstruturaDeDadosII
+GIN C&N&carla&AlgoritmosII
+GIN C&G&carla&AlgoritmosII
+GIN C&B&carla&AlgoritmosII
+GIN C&D&carla&AlgoritmosII
+GIN C&J&carla&AlgoritmosII
+GIN C&M&carla&AlgoritmosII
+GIN C&H&carla&AlgoritmosII
+GIN C&E&carla&AlgoritmosII
+GIN C&K&carla&AlgoritmosII
+GIN C&A&carla&AlgoritmosII
+GIN C&L&vega&RedesAB
+GIN C&F&vega&RedesAB
+GIN C&D&vega&RedesAB
+GIN C&J&vega&RedesAB
+GIN C&O&vega&RedesAB
+GIN C&E&vega&RedesAB
+GIN C&K&vega&RedesAB
+GIN C&I&vega&RedesAB
+GIN C&C&vega&RedesAB
+GIN C&L&vega&LabRedesAB
+GIN C&F&vega&LabRedesAB
+GIN C&D&vega&LabRedesAB
+GIN C&J&vega&LabRedesAB
+GIN C&O&vega&LabRedesAB
+GIN C&E&vega&LabRedesAB
+GIN C&K&vega&LabRedesAB
+GIN C&I&vega&LabRedesAB
+GIN C&C&vega&LabRedesAB
+GIN C&L&felipe&ESP
+GIN C&G&felipe&ESP
+GIN C&F&felipe&ESP
+GIN C&D&felipe&ESP
+GIN C&J&felipe&ESP
+GIN C&O&felipe&ESP
+GIN C&M&felipe&ESP
+GIN C&I&felipe&ESP
+GIN C&A&felipe&ESP
+GIN C&C&felipe&ESP
+GIN C&N&ferrari&EST
+GIN C&G&ferrari&EST
+GIN C&D&ferrari&EST
+GIN C&O&ferrari&EST
+GIN C&H&ferrari&EST
+GIN C&A&ferrari&EST
+GIN C&C&ferrari&EST
+GIN C&N&bicas&EngenhariaDeSoftwareII
+GIN C&L&bicas&EngenhariaDeSoftwareII
+GIN C&B&bicas&EngenhariaDeSoftwareII
+GIN C&F&bicas&EngenhariaDeSoftwareII
+GIN C&O&bicas&EngenhariaDeSoftwareII
+GIN C&E&bicas&EngenhariaDeSoftwareII
+GIN C&K&bicas&EngenhariaDeSoftwareII
+GIN C&C&bicas&EngenhariaDeSoftwareII
+GIN C&N&bicas&OrientacaoObjetosII
+GIN C&L&bicas&OrientacaoObjetosII
+GIN C&B&bicas&OrientacaoObjetosII
+GIN C&F&bicas&OrientacaoObjetosII
+GIN C&O&bicas&OrientacaoObjetosII
+GIN C&E&bicas&OrientacaoObjetosII
+GIN C&K&bicas&OrientacaoObjetosII
+GIN C&C&bicas&OrientacaoObjetosII
+GIN B&N&Wladmir&SistemasDistribuidos
+GIN B&G&Wladmir&SistemasDistribuidos
+GIN B&D&Wladmir&SistemasDistribuidos
+GIN B&O&Wladmir&SistemasDistribuidos
+GIN B&H&Wladmir&SistemasDistribuidos
+GIN B&A&Wladmir&SistemasDistribuidos
+GIN B&C&Wladmir&SistemasDistribuidos
+GIN B&N&Lisbete&Grafos
+GIN B&G&Lisbete&Grafos
+GIN B&B&Lisbete&Grafos
+GIN B&D&Lisbete&Grafos
+GIN B&J&Lisbete&Grafos
+GIN B&M&Lisbete&Grafos
+GIN B&H&Lisbete&Grafos
+GIN B&E&Lisbete&Grafos
+GIN B&K&Lisbete&Grafos
+GIN B&A&Lisbete&Grafos
+GIN B&L&Carlos&LPI
+GIN B&G&Carlos&LPI
+GIN B&F&Carlos&LPI
+GIN B&D&Carlos&LPI
+GIN B&J&Carlos&LPI
+GIN B&O&Carlos&LPI
+GIN B&M&Carlos&LPI
+GIN B&I&Carlos&LPI
+GIN B&A&Carlos&LPI
+GIN B&C&Carlos&LPI
+GIN B&N&Satoshi&LabBancoDeDadosII
+GIN B&G&Satoshi&LabBancoDeDadosII
+GIN B&O&Satoshi&LabBancoDeDadosII
+GIN B&M&Satoshi&LabBancoDeDadosII
+GIN B&H&Satoshi&LabBancoDeDadosII
+GIN B&I&Satoshi&LabBancoDeDadosII
+GIN B&N&Satoshi&BancoDeDadosII
+GIN B&G&Satoshi&BancoDeDadosII
+GIN B&O&Satoshi&BancoDeDadosII
+GIN B&M&Satoshi&BancoDeDadosII
+GIN B&H&Satoshi&BancoDeDadosII
+GIN B&I&Satoshi&BancoDeDadosII
+GIN B&N&Italo&LPII
+GIN B&L&Italo&LPII
+GIN B&B&Italo&LPII
+GIN B&F&Italo&LPII
+GIN B&O&Italo&LPII
+GIN B&E&Italo&LPII
+GIN B&K&Italo&LPII
+GIN B&C&Italo&LPII
+GIN B&L&Milton&LabRedesII
+GIN B&F&Milton&LabRedesII
+GIN B&D&Milton&LabRedesII
+GIN B&J&Milton&LabRedesII
+GIN B&O&Milton&LabRedesII
+GIN B&E&Milton&LabRedesII
+GIN B&K&Milton&LabRedesII
+GIN B&I&Milton&LabRedesII
+GIN B&C&Milton&LabRedesII
+GIN B&L&Milton&RedesII
+GIN B&F&Milton&RedesII
+GIN B&D&Milton&RedesII
+GIN B&J&Milton&RedesII
+GIN B&O&Milton&RedesII
+GIN B&E&Milton&RedesII
+GIN B&K&Milton&RedesII
+GIN B&I&Milton&RedesII
+GIN B&C&Milton&RedesII

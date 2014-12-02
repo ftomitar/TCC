@@ -13,6 +13,8 @@ import GUIFinal.ListController.MateriasListController;
 import GUIFinal.ListController.ProfessoresListController;
 import GUIFinal.ListController.SemestresListController;
 import GUIFinal.Professores.AdicionarProfessores;
+import Mock.MockDados4S;
+import Mock.MockGenerico;
 import Modelo.de.PL.Aplication;
 import Modelo.de.PL.Aula;
 import Modelo.de.PL.Horario;
@@ -72,8 +74,15 @@ public class Principal extends javax.swing.JFrame {
     
     
     private void mockGeracaoAulas(){
+        /*
         Aplication apl = new Aplication();
-        apl.inicializarAulas(aula);
+        MockDados4S md = new MockDados4S();
+        //apl.inicializarAulas(aula);
+        md.inicializarAulas(aula);
+        */
+        
+        Mock.MockGenerico mg = new MockGenerico();
+        mg.inicializarAulas(aula);
     }
     
     private void gerarTelasAdicionais(){
@@ -206,28 +215,28 @@ public class Principal extends javax.swing.JFrame {
         Set b = aula.getMaterias();
         Set c = aula.getProfessores();
         Set d = aula.getSemestres();
-        System.err.println("Horarios");
+        System.out.println("Horarios");
         for(Object x: a){
             System.out.println(x);
         }
-        System.err.println("Materias");
+        System.out.println("Materias");
         for(Object x: b){
             System.out.println(x);
         }
-        System.err.println("Professores");
+        System.out.println("Professores");
         for(Professor x:(Set<Professor>) c){
             Set<Horario> livre = x.getPeriodoLivre();
             System.out.println(x);
-            System.out.println("Horarios livres");
+            System.out.println("Horarios livres do prof: " + x);
             for(Horario h: livre){
                 System.out.println(h);
             }
         }  
-        System.err.println("Semestres");
+        System.out.println("Semestres");
         for(Semestre x:(Set<Semestre>) d){
             System.out.println(x);
             Set <Materia> mat = x.getMateriasLecionadas();
-            System.out.println("Materias lecionadas");
+            System.out.println("Materias lecionadas no semestre: " + x);
             for(Materia m: mat){
                System.out.println(m);
                
@@ -405,29 +414,46 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoEditarActionPerformed
 
     private void botaoSolucionarProblemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSolucionarProblemaActionPerformed
-        printAula();
+        //printAula();
         
         if(botaoRadioPL.isSelected()){
             try{
+                System.out.print("PL: ");
                 _strategy = _pl;
                 _strategy.carregarSolucao(); 
-                Parser parser = new Parser();
-                parser.gerarQuadro(_strategy.obterSolucao());
+                
+                Parser parser = new Parser(aula);
+                
+                
+                long startTime = System.currentTimeMillis();
+                String solution = _strategy.obterSolucao();
+                long endTime   = System.currentTimeMillis();
+                long totalTime = endTime - startTime;
+                System.out.println(totalTime);
+                parser.gerarQuadro(solution);
+                
             }
             catch(Exception e){
                 
             }
         }
         if(botaoRadioAG.isSelected()){
+            System.out.print("AG: ");
             _strategy = _ag;
             _strategy.carregarSolucao();  
-            Parser parser = new Parser();
-            parser.gerarQuadro(_strategy.obterSolucao());
+            Parser parser = new Parser(aula);
+            long startTime = System.currentTimeMillis();
+            String solution = _strategy.obterSolucao();
+            long endTime   = System.currentTimeMillis();
+            long totalTime = endTime - startTime;
+            System.out.println(totalTime);
+            parser.gerarQuadro(solution);
         }
         if(!botaoRadioPL.isSelected() && !botaoRadioAG.isSelected() ){
             System.out.println("O ANIMAL,");
             System.out.println("NENHUM BOTAO SELECIONADO xD");
         }
+       
         
     }//GEN-LAST:event_botaoSolucionarProblemaActionPerformed
 

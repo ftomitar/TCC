@@ -1,36 +1,32 @@
-package Modelo.de.PL;
-
-import LPSolveComunication.LPSolveInterface;
-import LPSolveComunication.FileManager;
-
-import Teste.Parser;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+package Mock;
+
+import Modelo.de.PL.Aula;
+import Modelo.de.PL.Horario;
+import Modelo.de.PL.Materia;
+import Modelo.de.PL.Professor;
+import Modelo.de.PL.Semestre;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+
 /**
  *
- * @author aaratame
+ * @author alexandre
  */
-public class Aplication {
+public class MockDados4S {
     Map<String, Professor> professores;
     Map<String, Materia> materias;
     List<Horario> horarios;
     Map<String, Semestre> semestres;
-    public Aplication(){
+    public MockDados4S(){
         professores = new HashMap<String, Professor>();
         materias = new HashMap<String, Materia>();
         horarios = new ArrayList<Horario>();
@@ -58,6 +54,16 @@ public class Aplication {
         professores.put("satoshi", new Professor("Satoshi"));
         professores.put("wladmir", new Professor("Wladmir"));
         professores.put("carlos", new Professor("Carlos"));
+        
+        professores.put("carla", new Professor("carla"));
+        professores.put("vega", new Professor("vega"));
+        professores.put("bicas", new Professor("bicas"));
+        professores.put("marye", new Professor("marye"));
+        professores.put("ferrari", new Professor("ferrari"));
+        professores.put("felipe", new Professor("felipe"));
+
+        
+        
     }
     
     public void gerarMaterias(){
@@ -92,6 +98,38 @@ public class Aplication {
         
         materias.put("SistemasDistribuidos", new Materia("SistemasDistribuidos", 2, "B"));
         
+        
+        materias.put("AlgoritmosII", new Materia("AlgoritmosII", 2, "A"));
+        materias.put("EstruturaDeDadosII", new Materia("EstruturaDeDadosII", 2, "A"));
+        
+        materias.put("RedesAB", new Materia("RedesAB", 1, "A"));
+        materias.put("LabRedesAB", new Materia("LabRedesAB", 2, "A"));
+        
+        materias.put("OrientacaoObjetosII", new Materia("OrientacaoObjetosII", 1, "A"));
+        materias.put("EngenhariaSoftwareII", new Materia("EngenhariaDeSoftwareII", 2, "A"));
+        
+        materias.put("BancoDeDadosAB", new Materia("BancoDeDadosAB", 2, "A"));
+        
+        materias.put("ESTAB", new Materia("EST", 2, "A"));
+        materias.put("ESPAB", new Materia("ESP", 1, "A"));
+        
+        
+        
+        
+        materias.put("RedesIIAB", new Materia("RedesIIAB", 1, "B"));
+        materias.put("LabRedesIIAB", new Materia("LabRedesIIAB", 2, "B"));
+        
+        materias.put("BancoDeDadosIIAB", new Materia("BancoDeDadosIIAB", 2, "B"));
+        materias.put("LabBancoDeDadosIIAB", new Materia("LabBancoDeDadosIIAB", 2, "B"));
+        
+        materias.put("LPIAB", new Materia("LPIAB", 2, "B"));
+        
+        materias.put("LPIIAB", new Materia("LPIIAB", 2, "B"));
+        
+        materias.put("GrafosAB", new Materia("GrafosAB", 2, "B"));
+        
+        materias.put("SistemasDistribuidosAB", new Materia("SistemasDistribuidosAB", 2, "B"));
+        
     }
     
     public void gerarHorarios(){
@@ -119,6 +157,8 @@ public class Aplication {
     public void gerarSemestres(){
         semestres.put("A", new Semestre("A"));
         semestres.put("B", new Semestre("B"));
+        semestres.put("C", new Semestre("C"));
+        semestres.put("D", new Semestre("D"));
     }
     
     public void gerarRestricao(){
@@ -190,8 +230,72 @@ public class Aplication {
         carlos.addHorarioDisponivel(horarios.get(9));
         carlos.addHorarioDisponivel(horarios.get(11));
         carlos.addHorarioDisponivel(horarios.get(12));
-        carlos.addHorarioDisponivel(horarios.get(14));       
+        carlos.addHorarioDisponivel(horarios.get(14));
         
+        
+        lisbete = professores.get("carla");
+        lisbete.addHorarioDisponivel(horarios.get(0));
+        lisbete.addHorarioDisponivel(horarios.get(1));
+        lisbete.addHorarioDisponivel(horarios.get(3));
+        lisbete.addHorarioDisponivel(horarios.get(4));
+        lisbete.addHorarioDisponivel(horarios.get(6));
+        lisbete.addHorarioDisponivel(horarios.get(7));
+        lisbete.addHorarioDisponivel(horarios.get(9));
+        lisbete.addHorarioDisponivel(horarios.get(10));
+        lisbete.addHorarioDisponivel(horarios.get(12));
+        lisbete.addHorarioDisponivel(horarios.get(13));
+        
+        milton = professores.get("vega");
+        milton.addHorarioDisponivel(horarios.get(2));
+        milton.addHorarioDisponivel(horarios.get(3));
+        milton.addHorarioDisponivel(horarios.get(4));
+        milton.addHorarioDisponivel(horarios.get(5));
+        milton.addHorarioDisponivel(horarios.get(8));
+        milton.addHorarioDisponivel(horarios.get(9));
+        milton.addHorarioDisponivel(horarios.get(10));
+        milton.addHorarioDisponivel(horarios.get(11));
+        milton.addHorarioDisponivel(horarios.get(14));
+        
+        
+        
+        italo = professores.get("bicas");
+        italo.addHorarioDisponivel(horarios.get(1));
+        italo.addHorarioDisponivel(horarios.get(2));
+        italo.addHorarioDisponivel(horarios.get(4));
+        italo.addHorarioDisponivel(horarios.get(5));
+        italo.addHorarioDisponivel(horarios.get(10));
+        italo.addHorarioDisponivel(horarios.get(11));
+        italo.addHorarioDisponivel(horarios.get(13));
+        italo.addHorarioDisponivel(horarios.get(14));
+        
+        satoshi = professores.get("marye");
+        satoshi.addHorarioDisponivel(horarios.get(6));
+        satoshi.addHorarioDisponivel(horarios.get(7));
+        satoshi.addHorarioDisponivel(horarios.get(8));
+        satoshi.addHorarioDisponivel(horarios.get(12));
+        satoshi.addHorarioDisponivel(horarios.get(13));
+        satoshi.addHorarioDisponivel(horarios.get(14));
+        
+        wladmir = professores.get("ferrari");
+        wladmir.addHorarioDisponivel(horarios.get(0));
+        wladmir.addHorarioDisponivel(horarios.get(2));
+        wladmir.addHorarioDisponivel(horarios.get(3));
+        wladmir.addHorarioDisponivel(horarios.get(6));
+        wladmir.addHorarioDisponivel(horarios.get(7));
+        wladmir.addHorarioDisponivel(horarios.get(13));
+        wladmir.addHorarioDisponivel(horarios.get(14));
+        
+        carlos = professores.get("felipe");
+        carlos.addHorarioDisponivel(horarios.get(0));
+        carlos.addHorarioDisponivel(horarios.get(2));
+        carlos.addHorarioDisponivel(horarios.get(3));
+        carlos.addHorarioDisponivel(horarios.get(5));
+        carlos.addHorarioDisponivel(horarios.get(6));
+        carlos.addHorarioDisponivel(horarios.get(8));
+        carlos.addHorarioDisponivel(horarios.get(9));
+        carlos.addHorarioDisponivel(horarios.get(11));
+        carlos.addHorarioDisponivel(horarios.get(12));
+        carlos.addHorarioDisponivel(horarios.get(14));
     }
     
     public void gerarRestricaoMateria(){
@@ -225,6 +329,38 @@ public class Aplication {
         Professor carlos = professores.get("carlos");
         carlos.addMateria(materias.get("ESP"));
         carlos.addMateria(materias.get("LPI"));
+        
+        
+        lisbete = professores.get("carla");
+        lisbete.addMateria(materias.get("AlgoritmosII"));
+        lisbete.addMateria(materias.get("EstruturaDeDadosII"));
+        lisbete.addMateria(materias.get("GrafosAB"));
+        
+        
+        milton = professores.get("vega");
+        milton.addMateria(materias.get("RedesAB"));
+        milton.addMateria(materias.get("LabRedesAB"));
+        milton.addMateria(materias.get("RedesIIAB"));
+        milton.addMateria(materias.get("LabRedesIIAB"));
+        
+        
+        italo = professores.get("bicas");
+        italo.addMateria(materias.get("OrientacaoObjetosII"));
+        italo.addMateria(materias.get("EngenhariaSoftwareII"));
+        italo.addMateria(materias.get("LPIIAB"));
+        
+        satoshi = professores.get("marye");
+        satoshi.addMateria(materias.get("BancoDeDadosAB"));
+        satoshi.addMateria(materias.get("BancoDeDadosIIAB"));
+        satoshi.addMateria(materias.get("LabBancoDeDadosIIAB"));
+        
+        wladmir = professores.get("ferrari");
+        wladmir.addMateria(materias.get("ESTAB"));
+        wladmir.addMateria(materias.get("SistemasDistribuidosAB"));
+        
+        carlos = professores.get("felipe");
+        carlos.addMateria(materias.get("ESPAB"));
+        carlos.addMateria(materias.get("LPIAB"));
     }
     
     public void gerarRestricaoSemestre(){
@@ -252,6 +388,30 @@ public class Aplication {
         segundo.addMateria(materias.get("SistemasDistribuidos"));
         
         
+        primeiro = semestres.get("C");
+        
+        primeiro.addMateria(materias.get("AlgoritmosII"));
+        primeiro.addMateria(materias.get("EstruturaDeDadosII"));
+        primeiro.addMateria(materias.get("RedesAB"));
+        primeiro.addMateria(materias.get("LabRedesAB"));
+        primeiro.addMateria(materias.get("OrientacaoObjetosII"));
+        primeiro.addMateria(materias.get("EngenhariaSoftwareII"));
+        primeiro.addMateria(materias.get("BancoDeDadosAB"));
+        primeiro.addMateria(materias.get("ESTAB"));
+        primeiro.addMateria(materias.get("ESPAB"));
+        
+        
+        segundo = semestres.get("D");
+        segundo.addMateria(materias.get("RedesIIAB"));
+        segundo.addMateria(materias.get("LabRedesIIAB"));
+        segundo.addMateria(materias.get("BancoDeDadosIIAB"));
+        segundo.addMateria(materias.get("LabBancoDeDadosIIAB"));
+        segundo.addMateria(materias.get("LPIAB"));
+        segundo.addMateria(materias.get("LPIIAB"));
+        segundo.addMateria(materias.get("GrafosAB"));
+        segundo.addMateria(materias.get("SistemasDistribuidosAB"));
+        
+        
     }
     
     
@@ -272,69 +432,4 @@ public class Aplication {
             aula.addSemestre(s);
         }
     }
-    
-    public static void main (String args[]){
-        
-        String file = "E:\\Modelo de PL - ver1.6\\files\\model_LP.txt";
-        
-        String type = "";
-        
-        //type = "file";
-        type = "terminal";
-        
-        Aplication apl = new Aplication();
-      
-        Aula aula = new Aula();
-        
-        apl.inicializarAulas(aula);
-        
-        aula.setQuadroAltura(3);
-        aula.setQuadroLargura(5);
-        
-        
-        
-        if(type.equals("file")){
-            
-        
-            IModelOutput outputManager = new FileManager(file);
-
-            Cronograma crono = new Cronograma(aula, outputManager);
-
-            crono.gerarModelo();
-
-            LPSolveInterface lpsolve = new LPSolveInterface(file);
-
-            String solution = lpsolve.solveModel();
-
-            System.out.println(solution);
-
-            Parser parser = new Parser(aula);
-
-            parser.gerarQuadro(solution);
-        
-        }
-        
-        else if (type.equals("terminal")){
-            IModelOutput outputManager = new TerminalOutput();
-            
-            Cronograma crono = new Cronograma(aula, outputManager);
-        
-            crono.gerarModelo();
-        }
-        /*
-        Aplication apl = new Aplication();
-      
-        Aula aula = new Aula();
-        
-        apl.inicializarAulas(aula);
-        
-        Cronograma crono = new Cronograma(aula);
-        
-        crono.gerarModelo();
-        */
-        
-    }
-    
-    
-    
 }

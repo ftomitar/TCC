@@ -6,6 +6,7 @@
 
 package Teste;
 
+import Modelo.de.PL.Aula;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,12 +27,13 @@ import javax.swing.border.LineBorder;
 import javax.swing.plaf.metal.MetalIconFactory;
 
 public class Parser {
+    Aula _aula;
     int colum = 0;
     int row = 0;
     
     int numeroSemestre = 1;
-    public Parser(){
-        
+    public Parser(Aula aula){
+        _aula = aula;
     }
     
     public void gerarQuadro(String modelo){
@@ -39,6 +41,9 @@ public class Parser {
         ArrayList<String> aulas ;
         colum = 5;
         row = 3;
+        colum = _aula.getQuadroAltura();
+        row = _aula.getQuadroLargura();
+        
         
         JTabbedPane tabPanel = new JTabbedPane();
  
@@ -267,7 +272,7 @@ public class Parser {
     
     
     public static void main (String args[]){
-       Parser p= new Parser();
+       //Parser p= new Parser();
        //p.gerarQuadro(String teste);
     }
 }
